@@ -1,0 +1,98 @@
+<div class="row">
+<!-- mudar exibicao -->
+  <div class="col-md-1">
+  </div>
+  <!-- data inicial -->
+  <div class="col-md-3">
+    <div class="col-sm-6">
+        <div class='input-group date' id='datetimepicker1'>
+            <input type='text' placeholder="Data inicial" class="form-control" id="picker1" />
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class='input-group date' id='datetimepicker2'>
+            <input type='text' placeholder="Data final" class="form-control"  id="picker2" />
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+    </div>
+  </div>
+  <!-- produtos -->
+  <div class="col-md-2">
+    <select ng-model="produto" id="Produto">
+      <option style="display:none;" value=''>Produto</option>
+      <option ng-repeat="produto in prod" value="{{produto.value}}">{{produto.label}}</option>          
+      </optgroup> 
+   </select>
+  </div>
+  
+  <!-- conteudos -->
+  <div class="col-md-2">
+    <select ng-model="midia" id="TipoMidia">
+      <option style="display:none;" value="">Tipo de mídia</option>
+      <option ng-repeat="midia in tipoMidia" value="{{midia.value}}">{{midia.label}}</option>  
+    </select>
+  </div>
+
+<!-- categorias -->
+  <div class="col-md-2" style="text-align: center">
+  <button ng-click="atualiza(produto,midia)"><b><font color="0072D4">FILTRAR</font></b>
+      </button>
+    <!-- <select ng-model="categoriaSelecionado" id="Categoria" ng-change="atualiza('tagC',categoriaSelecionado)" selectedOption=''>
+      <option style="display:none;" value="">Categoria</option>
+      <option ng-repeat="cat in categ" value="{{cat.label.toLowerCase()}}">{{cat.label}}</option>  
+    </select> -->
+  </div>
+
+  <!-- limpar filtros -->
+  <div class="col-md-2" layout-align="start center" ng-init="setValues()">
+    <button ng-click="cleanFilter()"><b><font color="D33B33">LIMPAR FILTROS</font></b></button>
+  <!-- espaço final -->
+
+  <script>
+      $(function () {
+          $('#datetimepicker1').datetimepicker({
+            format: 'YYYY-MM-DDTHH:mm'
+          });
+          $('#datetimepicker2').datetimepicker({
+            format: 'YYYY-MM-DDTHH:mm'
+          });
+      });
+  </script>
+</div>
+
+<!-- <div class="row">
+
+  <select id="inicioDia">
+    <option style="display:none;" value="undefined">Dia</option>
+    <option ng-repeat="dia in dias" value="{{dia}}">{{dia}}</option>  
+  </select>
+  <select id="inicioMes">
+    <option style="display:none;" value="undefined">Mês</option>
+    <option ng-repeat="mes in meses" value="{{mes.value}}">{{mes.label}}</option>
+  </select>
+  <select id="inicioHora">
+    <option style="display:none;" value="undefined">Hora</option>
+    <option ng-repeat="hora in horas" value="{{hora}}">{{hora}}</option>  
+  </select>
+
+  <select id="fimDia">
+    <option style="display:none;" value="undefined">Dia</option>
+    <option ng-repeat="dia in dias" value="{{dia}}">{{dia}}</option>  
+  </select>
+  <select id="fimMes">
+    <option style="display:none;" value="undefined">Mês</option>
+    <option ng-repeat="mes in meses" value="{{mes.value}}">{{mes.label}}</option>
+  </select>
+  <select id="fimHora">
+    <option style="display:none;" value="undefined">Hora</option>
+    <option ng-repeat="hora in horas" value="{{hora}}">{{hora}}</option>  
+  </select>
+<button><a href="#/clipper" onclick="window.location.reload(true);"><img src="img/clipper/limpar.png"></a></button>
+<div layout="row" align="center">
+      
+    </div> -->
