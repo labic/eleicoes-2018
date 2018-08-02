@@ -1,5 +1,5 @@
 angular
-    .module('hash.ui.widgets')
+    .module('eleicoes.ui.widgets')
     .controller('widgetTweetsMapCtrl', ['$scope', '$http', function($scope, $http) {
       $http.get('/us-population-density.json')
         .success(function(data) {

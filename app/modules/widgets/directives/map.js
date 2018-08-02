@@ -2,12 +2,12 @@
   'use strict';
   /**
    * @ngdoc directive
-   * @name hash.widgets:map
+   * @name eleicoes.widgets:map
    * @description
    * # Create a map
    */
   angular
-    .module('hash.ui.widgets')
+    .module('eleicoes.ui.widgets')
     .directive('widgetMap', function () {
       return {
         restrict: 'E',
@@ -65,7 +65,7 @@
             }]
           })
 
-          $scope.$broadcast('hash.widgets:map/ready');
+          $scope.$broadcast('eleicoes.widgets:map/ready');
         }
       };
     });

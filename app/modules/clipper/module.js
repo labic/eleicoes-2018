@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  angular.module('hash.clipper', [])
+  angular.module('eleicoes.clipper', [])
   .run(function (settings) {
   });
 })();

@@ -1,4 +1,4 @@
-hash.directive('modolista', function() { 
+eleicoes.directive('modolista', function() { 
   return { 
     restrict: 'E', 
     scope: { 

@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   angular
-    .module('hash.core')
+    .module('eleicoes.core')
     // .config([
     //   'cfpLoadingBarProvider',
     //   function (cfpLoadingBarProvider) {

@@ -1,8 +1,8 @@
 (function () {
   'use strict';
   angular
-    .module('hash.core')
+    .module('eleicoes.core')
     .config(function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/twitter');
+        $urlRouterProvider.otherwise('/dashboard');
     });
 })();

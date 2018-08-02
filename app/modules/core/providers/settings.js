@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   angular
-    .module('hash.core')
+    .module('eleicoes.core')
     .provider('settings', function () {
       var settingsValues = [];
 

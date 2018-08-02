@@ -1,5 +1,5 @@
 angular
-    .module('hash.clipper')
+    .module('eleicoes.clipper')
     .controller('menuController', [ '$scope','$location', function ($scope, $location) {
 
     $scope.produto = '';

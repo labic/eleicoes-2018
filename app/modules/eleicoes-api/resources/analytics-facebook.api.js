@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('hash.api')
+    .module('eleicoes.api')
     .factory('AnalyticsFacebook', function($resource, CONFIG) {
 
       var PARAMS = {

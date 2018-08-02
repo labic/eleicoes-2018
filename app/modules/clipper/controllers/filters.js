@@ -214,7 +214,7 @@ function updateData(filterManager,newData){
 	return applyAllFilters(filterManager);
 }
 
-angular.module('hash.clipper').exports = {
+angular.module('eleicoes.clipper').exports = {
 	"createFilterManager":createFilterManager,
 	"getData":getData,
 	"addFilter":addFilter,

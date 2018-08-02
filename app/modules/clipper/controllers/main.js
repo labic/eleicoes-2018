@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   angular
-    .module('hash.clipper')
+    .module('eleicoes.clipper')
     .controller('main', function($scope) {
 
     });

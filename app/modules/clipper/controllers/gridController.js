@@ -1,5 +1,5 @@
 angular
-    .module('hash.clipper')
+    .module('eleicoes.clipper')
     .controller("gridController", function($scope, $http, $location, Tweet, $filter) { 
 
     $scope.url = 'https://inep-hash-data-api-dev.herokuapp.com/articles';

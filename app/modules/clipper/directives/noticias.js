@@ -1,4 +1,4 @@
-hash.directive('noticias', function() { 
+eleicoes.directive('noticias', function() { 
   return { 
     restrict: 'E', 
     scope: { 

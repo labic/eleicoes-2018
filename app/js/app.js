@@ -1,4 +1,4 @@
-var hash = angular.module('eleicoes', [
+var eleicoes = angular.module('eleicoes', [
   'ui.router',
   'ngResource',
   'eleicoes.api',

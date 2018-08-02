@@ -1,4 +1,4 @@
-angular.module('hash.clipper')
+angular.module('eleicoes.clipper')
     .controller("estruturaNoticia", function($scope, $http, $location,$sce) { 
 		var query = $location.search();
 		$scope.url = 'https://inep-hash-data-api-dev.herokuapp.com/articles/'+query.id;

@@ -12,7 +12,7 @@
    * @requires gettextCatalog
    **/
   angular
-    .module('hash.core')
+    .module('eleicoes.core')
     // .controller('MainCtrl', function ($scope, $rootScope, $state, AppAuth, CoreService, User, gettextCatalog) {
     .controller('MainCtrl', function ($scope, $rootScope, $state) {
       $scope.modulesMenu = $rootScope.modulesMenu;

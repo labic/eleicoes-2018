@@ -11,7 +11,7 @@
    * @requires AppAuth
    **/
   angular
-    .module('hash.core')
+    .module('eleicoes.core')
     //.controller('RouteCtrl', function (ApiService, AppAuth, $location) {
     .controller('RouteCtrl', function ($location) {
 

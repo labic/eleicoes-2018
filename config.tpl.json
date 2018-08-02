@@ -1,5 +1,5 @@
 {
-  "name": "hash",
+  "name": "eleicoes",
   "wrap": "amd",
   "constants": {
     "HASH_API_BASE_URI": "https://sdh-hash-api-dev.herokuapp.com/v2",
