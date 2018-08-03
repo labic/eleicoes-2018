@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  angular.module('eleicoes.clipper', [])
+  angular.module('eleicoes.dashboard', [])
   .run(function (settings) {
   });
 })();

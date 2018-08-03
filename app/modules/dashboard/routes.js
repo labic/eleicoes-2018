@@ -1,24 +1,24 @@
 (function () {
   'use strict';
   angular
-    .module('eleicoes.clipper')
+    .module('eleicoes.dashboard')
     .config(function ($stateProvider) {
       $stateProvider
-        .state('clipper', {
-          url: '/clipper',
+        .state('dashboard', {
+          url: '/dashboard',
           views: {
             '': { 
-              templateUrl: 'modules/clipper/views/index.html',
+              templateUrl: 'modules/dashboard/views/index.html',
               controller: 'main'
             }
           }
       })
 
-        .state('clipper/noticia', {
-          url: '/clipper/noticia',
+        .state('dashboard/noticia', {
+          url: '/dashboard/noticia',
           views: {
             '': { 
-              templateUrl: 'modules/clipper/views/indexContent.html',
+              templateUrl: 'modules/dashboard/views/indexContent.html',
               controller: 'main'
             }
           }

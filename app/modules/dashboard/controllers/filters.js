@@ -214,7 +214,7 @@ function updateData(filterManager,newData){
 	return applyAllFilters(filterManager);
 }
 
-angular.module('eleicoes.clipper').exports = {
+angular.module('eleicoes.dashboard').exports = {
 	"createFilterManager":createFilterManager,
 	"getData":getData,
 	"addFilter":addFilter,

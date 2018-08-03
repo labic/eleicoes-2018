@@ -1,4 +1,4 @@
-angular.module('eleicoes.clipper')
+angular.module('eleicoes.dashboard')
     .controller("estruturaNoticia", function($scope, $http, $location,$sce) { 
 		var query = $location.search();
 		$scope.url = 'https://inep-hash-data-api-dev.herokuapp.com/articles/'+query.id;
@@ -16,7 +16,7 @@ angular.module('eleicoes.clipper')
 	    },
 	    function (err) {
 	        console.log("Notícia não encontrada");
-	        document.getElementById('conteudo').innerHTML ="<h1><b>Erro ao carregar conteúdo</b></h1><br><br><a href='#/clipper' onclick='javascript:location.reload();'>Voltar</a>";
+	        document.getElementById('conteudo').innerHTML ="<h1><b>Erro ao carregar conteúdo</b></h1><br><br><a href='#/dashboard' onclick='javascript:location.reload();'>Voltar</a>";
 	    });
 
 });

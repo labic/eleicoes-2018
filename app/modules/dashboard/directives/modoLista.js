@@ -5,6 +5,6 @@ eleicoes.directive('modolista', function() {
       info: '=',
       listaSel: '='
     }, 
-    templateUrl: 'modules/clipper/directives/modoLista.html' 
+    templateUrl: 'modules/dashboard/directives/modoLista.html' 
   }; 
 });

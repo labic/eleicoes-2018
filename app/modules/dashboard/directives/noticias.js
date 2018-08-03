@@ -5,6 +5,6 @@ eleicoes.directive('noticias', function() {
       info: '=',
       listaSel: '='
     }, 
-    templateUrl: 'modules/clipper/directives/noticias.html' 
+    templateUrl: 'modules/dashboard/directives/noticias.html' 
   }; 
 });
