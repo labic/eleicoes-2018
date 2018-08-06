@@ -3,7 +3,7 @@
   <div class="col-md-1">
   </div>
   <!-- data inicial -->
-  <div class="col-md-3">
+  <div class="col-md-5">
     <div class="col-sm-6">
         <div class='input-group date' id='datetimepicker1'>
             <input type='text' placeholder="Data inicial" class="form-control" id="picker1" />
@@ -21,37 +21,16 @@
         </div>
     </div>
   </div>
-  <!-- produtos -->
-  <div class="col-md-2">
-    <select ng-model="produto" id="Produto">
-      <option style="display:none;" value=''>Produto</option>
-      <option ng-repeat="produto in prod" value="{{produto.value}}">{{produto.label}}</option>          
-      </optgroup> 
-   </select>
-  </div>
+  <!-- espacamento -->
+  <div class="col-md-1"></div>
   
   <!-- conteudos -->
-  <div class="col-md-2">
+  <div class="col-md-3">
     <select ng-model="midia" id="TipoMidia">
       <option style="display:none;" value="">Tipo de mídia</option>
       <option ng-repeat="midia in tipoMidia" value="{{midia.value}}">{{midia.label}}</option>  
     </select>
   </div>
-
-<!-- categorias -->
-  <div class="col-md-2" style="text-align: center">
-  <button ng-click="atualiza(produto,midia)"><b><font color="0072D4">FILTRAR</font></b>
-      </button>
-    <!-- <select ng-model="categoriaSelecionado" id="Categoria" ng-change="atualiza('tagC',categoriaSelecionado)" selectedOption=''>
-      <option style="display:none;" value="">Categoria</option>
-      <option ng-repeat="cat in categ" value="{{cat.label.toLowerCase()}}">{{cat.label}}</option>  
-    </select> -->
-  </div>
-
-  <!-- limpar filtros -->
-  <div class="col-md-2" layout-align="start center" ng-init="setValues()">
-    <button ng-click="cleanFilter()"><b><font color="D33B33">LIMPAR FILTROS</font></b></button>
-  <!-- espaço final -->
 
   <script>
       $(function () {
