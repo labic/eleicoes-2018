@@ -1,5 +1,5 @@
 html,body {
-  font-family: helvetica, sans-serif;;
+  font-family: Open-sans, sans-serif;;
   background-color: #F2F2F2;
   border: none;
   width: 100%;
@@ -63,7 +63,7 @@ html,body {
   border: 1px gray;
   background-color: #FFFFFF;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
-  color:#28A0F9;
+  color:#0072D4;
 }
 
 .navbar-fixed-top img {
@@ -91,7 +91,7 @@ html,body {
   border: none;
   border-bottom: 1px solid #2B3044;
   padding: 3px 10px;
-  color:#004C84;
+  color:#0072D4;
   -moz-appearance: none; /* Remove estilo padrão do FireFox */
   appearance: none; /* Remove estilo padrão do FireFox*/
 }
