@@ -1,6 +1,6 @@
 angular
     .module('eleicoes.dashboard')
-    .controller("gridController", function($scope, $http, $location, Tweet, $filter) { 
+    .controller("gridController", function($scope, $http, $location, $filter) { 
 
     $scope.url = 'https://inep-hash-data-api-dev.herokuapp.com/articles';
     $scope.keywords = [];
