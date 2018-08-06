@@ -1,19 +1,7 @@
 <!--  menu topo  -->
 <nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="menuController">
-<br>
-<div class="row">
-  <div class="col-md-12 exibicao">
-    <p>
-      Modo de exibição:
-      <span ng-click="mudarExibicao(0)" class="glyphicon glyphicon-th"></span>
-      <span ng-click="mudarExibicao(1)" class="glyphicon glyphicon-th-list"></span>
-    </p>
-
-  </div>
-
-</div>
-<br>
-    <searching> </searching>
+<div class="container">
+    <searching> </searching></div>
 </nav>
 
 <div id="conteudo">
@@ -36,7 +24,9 @@
     </div>
     </div>
     <!--  ícone fixo para relatório  -->
-    <button style="position:fixed; margin-left: 70%;" ng-click="open('lg','modules/dashboard/views/indexContent.html',null)" title="Gerar relatório manual"><img src="img/dashboard/icon3.PNG" style="height: 50px; width: auto; cursor: pointer"></button>
+    <button style="position:fixed; margin-left: 70%;" ng-click="open('lg','modules/dashboard/views/indexContent.html',null)" title="Gerar relatório manual">
+      <img src="img/dashboard/icon3.PNG" style="height: 50px; width: auto; cursor: pointer">
+    </button>
 
       <div ng-repeat="nov in dados | limitTo:limNot">
       <!-- seção que aparece no modo de exibição normal -->

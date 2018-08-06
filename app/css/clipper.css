@@ -10,9 +10,8 @@ html,body {
   position: fixed;
   right: 5%;
   left: 8%;
-  top:25%;
-  height: 72%;
-  z-index: 0;
+  top: 15%;
+  bottom: 5%;
   font-size: 15px;
   background-color: white;
   padding:2% 10% 0% 10%;
@@ -59,8 +58,8 @@ html,body {
   top: 3%;
   right: 5%;
   left:8%;
-  height: 19%;
-  z-index: 1;
+  height: auto;
+  padding: 20px 0 20px 0;
   border: 1px gray;
   background-color: #FFFFFF;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
