@@ -1,0 +1,164 @@
+.relatorio{
+  background: #2b3044;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  float:left;
+}
+
+.relatorio-title{
+  width: 100%;
+  height: 60px;
+  margin-top:20px;
+}
+
+.relatorio-title-str{
+  width: 90%;
+  height: 100%;
+  margin-left: 5%;
+  padding-left: 50px;
+}
+
+.relatorio-title p{
+  float:left;
+  font-size: 18px;
+  width: 200px;
+  height: 100%;
+  color: #fff;
+  font-weight: 600;
+}
+
+.relatorio-title-menu{
+  margin-top: 10px;
+  border-left: 8px solid #56c8e7;
+  width: calc(100% - 200px);
+  height: 40px;
+  float: left;
+}
+
+.relatorio-title-menu-img{
+  float:left;
+  height: 25px;
+  width: 25px;
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.relatorio-title-menu p{
+  float:left;
+  color: #7ACEE3;
+  font-size: 20px;
+  line-height: 45px;
+  margin-left: 10px;
+}
+
+.twitter-color{
+  fill:#7acee3;
+}
+
+/********* SOCIAL *********/
+
+.relatorio-social{
+  width: 50%;
+  height: auto;
+  float:left;
+}
+
+.relatorio-social-title{
+  text-transform: uppercase;
+  font-size: 25px;
+  padding:20px;
+}
+
+.relatorio-social p{
+  text-align: center;
+  color: #fff;
+}
+
+.relatorio-social-metrics svg{
+  fill: #fff;
+  height: 40px;
+  width: 40px;
+  margin-left:13px;
+}
+
+.relatorio-social-metrics-each{
+  width:65px;
+  height: 65px;
+}
+
+.relatorio-social-metrics{
+  display: flex;
+  justify-content: space-around;
+}
+
+.relatorio-social-graficos{
+  width: 100%;
+  height: 300px;
+  margin-top:20px;
+  padding: 20px;
+}
+
+/******* GRAFICO **********/
+
+.relatorio-social-graficos path { 
+  stroke: steelblue;
+  stroke-width: 2;
+  fill: none;
+}
+
+.relatorio-social-graficos .axis path,
+.relatorio-social-graficos .axis line {
+  fill: none;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.relatorio-social-graficos text{
+  font: 12px Arial;
+  fill: white;
+}
+
+/****************** MENU *******************/
+
+#relatorio-menu{
+  width: 100%;
+  height: 140px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+#relatorio-menu input[type="radio"]{
+  display: none;
+}
+
+.relatorio-menu-option{
+  width: 33vw;
+  height: 100%;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.relatorio-menu-option label{
+  cursor:pointer;
+  display: block;
+  color: rgb(6, 204, 215);
+  text-align: center;
+  border: 1px solid white;
+  font-size: 20px;
+  font-weight: bold;
+  height: 100%;
+  padding: 20px;
+}
+
+#relatorio-menu input[type="radio"]:checked + label{
+  border: 1px solid rgb(6, 204, 215);
+  background-color: rgb(6, 204, 215);
+  color: #2b3044;
+}
+
+.relatorio-menu-option:hover label{
+  background: white;
+  color: #2b3044;
+}

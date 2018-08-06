@@ -1,0 +1,13 @@
+{
+  "name": "twentytwenty",
+  "homepage": "https://github.com/zurb/twentytwenty",
+  "_release": "f053de58f0",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f053de58f06a42f78de40e377a3a8a88e0676cec"
+  },
+  "_source": "https://github.com/zurb/twentytwenty.git",
+  "_target": "*",
+  "_originalSource": "twentytwenty"
+}
