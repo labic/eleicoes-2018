@@ -1,0 +1,37 @@
+{
+  "actors": [{
+      "title": "Mídia",
+      "tag": "mídia",
+      "icon": "FACEBOOK-01.svg"
+    },{
+      "title": "INEP",
+      "tag": "inep",
+      "icon": "FACEBOOK-03.svg"
+    },{
+      "title": "Educacional",
+      "tag": "educacional",
+      "icon": "FACEBOOK-05.svg"
+    }],
+  "period": {
+    "type": "single-option",
+    "values": [
+      {  
+        "number": "1",
+        "time": "hora",
+        "value": "1h"
+      },{
+        "number": "6",
+        "time": "horas",
+        "value": "6h"
+      },{
+        "number": "1",
+        "time": "dia",
+        "value": "1d"
+      },{
+        "number": "2",
+        "time": "Dias",
+        "value": "2d"
+      }
+    ]
+  }
+}

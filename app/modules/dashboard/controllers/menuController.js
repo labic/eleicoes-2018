@@ -53,42 +53,6 @@ angular
 
     };
 
-    $scope.prod = [
-      {label:'Educação Básica',value:'educação básica'},
-      {label:'ANA',value:'ana'},
-      {label:'ANEB',value:'aneb'},
-      {label:'ANRESC (Prova Brasil)',value:'anresc'},
-      {label:'Enceeja',value:'enceeja'},
-      {label:'ENEM',value:'enem'},
-      {label:'IDEB',value:'ideb'},
-      {label:'SAEB',value:'saeb'},
-      {label:'Educação Superior',value:'educação superior'},
-      {label:'ANASEM',value:'anasem'},
-      {label:'ENADE',value:'enade'},
-      {label:'Indicadores de Qualidade',value:'indicadores de qualidade'},
-      {label:'REVALIDA',value:'revalida'},
-      {label:'SAEG',value:'saeg'},
-      {label:'SINAES',value:'sinaes'},
-      {label:'Institucional',value:'institucional'},
-      {label:'Banco de Dados Terminológicos do Mercosul (BDT)',value:'bdt'},
-      {label:'Bibliografia Brasileira da Educação (BBE)',value:'bbe'},
-      {label:'Biblioteca e Arquivo Histórico da Educação Brasileira',value:'biblioteca e arquivo histórico da educação brasileira'},
-      {label:'Centro de Informação e Biblioteca em Educação (Cibec)',value:'cibec'},
-      {label:'Serviço de Atendimento ao Pesquisador (SAP)',value:'sap'},
-      {label:'Thesaurus Brasileiro da Educação (Brased)',value:'brased'},
-      {label:'Internacional',value:'internacional'},
-      {label:'Agenda 2030',value:'agenda 2030'},
-      {label:'ARCU-SUL',value:'arcu-sul'},
-      {label:'CELPE-BRAS',value:'celpe-bras'},
-      {label:'EaG',value:'eag'},
-      {label:'Estudos Regionais Comparativos ERCE/LLECE',value:'erce/llece'},
-      {label:'Metas Educativas 2021',value:'metas educativas 2021'},
-      {label:'Pesquisa TALIS',value:'pesquisa talis'},
-      {label:'PISA',value:'pisa'},
-      {label:'RIACES',value:'riaces'},
-      {label:'SEM',value:'sem'}
-    ];
-
     $scope.tipoMidia = [
      // {
      //  label:'Sites'

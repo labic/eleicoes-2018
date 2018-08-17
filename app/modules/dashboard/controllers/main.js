@@ -2,14 +2,25 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal) {
 
 	//pega as configurações de arquivo
 	$scope.config = {
-		//filter: settings.get('dashboard.filters')
+		filter: settings.get('dashboard.filters')
   };
   $scope.url = 'https://inep-hash-data-api-dev.herokuapp.com/articles';
   $scope.keywords = [];
   $scope.dados = [];
-  $scope.quant = 10;
-  $scope.numPage = 1;
   $scope.noticiaSelecionada = [];
+  
+  $scope.filter = {
+    time: $scope.config.filter.period.values[2].value,
+    profileType: 'page',
+    actor: $scope.config.filter.actors[0].tag,
+    word: undefined,
+    theme: undefined,
+    tag: undefined,
+    page: 1,
+    per_page: 25,
+    skip: 0,
+    limit: 25
+  };
 
   //pegando todos os dados
   $scope.loadData = function(keywords,data) {
@@ -127,12 +138,6 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal) {
 				$scope.open('sm','modules/repositorio/views/partials/nova_visualizacao.html')}
 		}
 	];
-
-	$scope.filter = {
-		dataInicio: undefined,
-		dataFim: undefined,
-		tipo: undefined
-	};
 
 	// Watch assiste a todos os filtros presentes na página esperando alguma alteração.
 	$scope.$watch('filter', function (newFilter, oldFilter) {
