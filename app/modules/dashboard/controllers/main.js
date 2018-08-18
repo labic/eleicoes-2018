@@ -18,7 +18,7 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal) {
     tag: undefined,
     page: 1,
     per_page: 25,
-    skip: 0,
+    images: true,
     limit: 25
   };
 
@@ -29,9 +29,9 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal) {
     if(keywords.length > 1){
         if(data != undefined) {
             data = data.replace('I','/');
-            params = {'per_page':$scope.quant,'page':$scope.numPage, 'filters[keywords]':keywords, 'filters[datePublished]':data};
+            params = {'per_page':$scope.filter.limit,'page':$scope.filter.page, 'filters[keywords]':keywords, 'filters[datePublished]':data};
         } else {
-            params = {'per_page':$scope.quant,'page':$scope.numPage, 'filters[keywords]':keywords};
+            params = {'per_page':$scope.filter.limit,'page':$scope.filter.page, 'filters[keywords]':keywords};
         }
     } else {
         if(data != undefined) {
@@ -111,55 +111,30 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal) {
 
 	};
 
-	//menu da dashboard
-	$scope.menuDashboard = 
-	[
-		{
-			label: 'Nova pasta',      // menu option label
-			onClick: function ($event) {
-			$scope.open('sm','modules/repositorio/views/partials/nova_pasta.html')}   // on click handler
-		},
-		{
-			label: 'Nova coleta',
-			onClick: function ($event) {
-				$scope.open('sm','modules/repositorio/views/partials/nova_coleta_escolha.html')}
-		},
-		{
-			label: 'Nova estratégia',
-			onClick: function ($event) {
-				$scope.open('sm','modules/repositorio/views/partials/nova_visualizacao.html')}
-		},
-		// {
-		// 	divider: true       // will render a divider
-		// },
-		{
-			label: 'Nova estatística',	//falta atualizar com o layout
-			onClick: function ($event) {
-				$scope.open('sm','modules/repositorio/views/partials/nova_visualizacao.html')}
-		}
-	];
-
 	// Watch assiste a todos os filtros presentes na página esperando alguma alteração.
 	$scope.$watch('filter', function (newFilter, oldFilter) {
 
 		$(".dashboard").scrollTop("slow");
 		$scope.countpage = 0;
 
-		// //filtro de path para requisicao
-		// if (newFilter.path != oldFilter.path) {
-			
-		// }
-
-		if ($scope.startPage == 1) {
+		if ($scope.filter.page > 1) {
 			//carregar itens da primeira página
-			$scope.startPage = 0;
+			$scope.filter.page = 1;
 		} else {
 
-			if ((newFilter.status != oldFilter.status) || (newFilter.ordem != oldFilter.ordem)) {
-				//$scope.loadItems(newFilter.status, newFilter.ordem, undefined);
+			if (newFilter.time != oldFilter.time) {
+				$scope.loadItems(newFilter.status, newFilter.ordem, undefined);
 			}
-			if (newFilter.name != oldFilter.name) {
-				//$scope.loadItems(newFilter.status, newFilter.ordem, newFilter.name);
+			if (newFilter.actor != oldFilter.actor) {
+				$scope.loadItems(newFilter.status, newFilter.ordem, newFilter.name);
+			}
+
+			if (newFilter.page != oldFilter.page) {
+				$scope.loadItems(newFilter.status, newFilter.ordem, newFilter.name);
+			}
+
+			if (newFilter.images != oldFilter.images) {
+				$scope.loadItems(newFilter.status, newFilter.ordem, newFilter.name);
 			}
 		}
 

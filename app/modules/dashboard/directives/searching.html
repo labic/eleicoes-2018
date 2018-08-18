@@ -3,9 +3,8 @@
   <div class="menu_space"></div>
   <!-- mudar exibicao -->
   <div class="menu_space">
-      Modo de exibição:<br>
-      <span ng-click="mudarExibicao(0)" class="glyphicon glyphicon-th" style="margin-right: 20px; cursor:pointer"></span>
-      <span ng-click="mudarExibicao(1)" class="glyphicon glyphicon-th-list" style=" cursor:pointer"></span>
+      <span ng-show="!filter.images" ng-click="filter.images = !filter.images" class="glyphicon glyphicon-th" style="cursor:pointer"> Lista</span>
+      <span ng-show="filter.images" ng-click="filter.images = !filter.images" class="glyphicon glyphicon-th-list" style=" cursor:pointer"> Imagens</span>
   </div>
   <!-- data inicial -->
   <div class="menu_space">
