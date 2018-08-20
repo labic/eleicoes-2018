@@ -16,20 +16,13 @@
 
       <div ng-repeat="nov in dados | limitTo:limNot">
       <!-- seção que aparece no modo de exibição normal -->
-        <section layout="row" layout-align="end" layout-wrap align="end" ng-show="filter.images">
-          <input type="checkbox" ng-click="adicionaNoticia(nov)" title="Adicionar ao relatório" >
-        </section>
         <noticias info='nov' class="row" ng-show="filter.images"></noticias>
 
       <!-- seção que aparece no modo de exibição lista -->
       <div class="row">
         <modolista info='nov' class="col-md-11" ng-show="!filter.images"></modolista>
-        <div class="col-md-1" ng-show="!filter.images">
-          <input type="checkbox" ng-click="adicionaNoticia(nov)" >
-        </div>
       </div>
 
-      <hr style="width:100%; top: 9px; position: relative; height: 2px;" >
       </div>
       <br><br>
       <section layout="row" layout-align="center" layout-wrap align="center">

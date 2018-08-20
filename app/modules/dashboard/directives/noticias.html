@@ -1,4 +1,24 @@
-<div class="col-md-9" style="padding-right: 10%;">
+<div class="fb-post-box">
+    <input type="checkbox" style="margin-left:98%" ng-click="adicionaNoticia(nov)" >
+  <div class="fb-post-header">
+    <img src="img/dashboard/perfil.png">
+    <label ng-show="info.headline === null">[Título indisponível]</label><label>{{:: info.headline }}</label>
+  </div>
+
+  <div class="fb-post-text">
+    {{::info.description}}
+  </div>
+
+  <div class="fb-post-img">
+    <img src="{{:: info.image }}"> 
+  </div>
+
+  <div class="fb-reacts">
+    	<input type="button" value="{{:: tag }}" ng-repeat = "tag in info.keywords | limitTo:15" ng-click="" title="Pesquisar por esse tema">
+  </div>
+</div>
+
+<!-- <div class="col-md-9" style="padding-right: 10%;">
   	<div class="row">
       <a href="#/dashboard/noticia?id={{::info.id}}" target="_blank" style="display: inline">
       <h3 ng-show="info.headline === null">[Título indisponível]</h3><h3>{{:: info.headline }}</h3></a>
@@ -18,4 +38,4 @@
       <div layout-align="start" layout-wrap align="end">
       <label><h5  ng-click="showDialog(info)" >Pré-visualizar</h5></label>
     </div>
-</div>
+</div> -->
