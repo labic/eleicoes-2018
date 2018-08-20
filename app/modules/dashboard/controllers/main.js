@@ -1,52 +1,31 @@
-eleicoes.controller('main', function ($scope, $http, settings, $uibModal) {
+eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filter, $location) {
 
 	//pega as configurações de arquivo
 	$scope.config = {
 		filter: settings.get('dashboard.filters')
-  };
-  $scope.url = 'https://inep-hash-data-api-dev.herokuapp.com/articles';
-  $scope.keywords = [];
-  $scope.dados = [];
-  $scope.noticiaSelecionada = [];
-  
-  $scope.filter = {
-    time: $scope.config.filter.period.values[2].value,
-    profileType: 'page',
-    actor: $scope.config.filter.actors[0].tag,
-    word: undefined,
-    theme: undefined,
-    tag: undefined,
-    page: 1,
-    per_page: 25,
-    images: true,
-    limit: 25
-  };
+	};
+	$scope.url = 'https://inep-hash-data-api-dev.herokuapp.com/articles';
+	$scope.keywords = [];
+	$scope.dados = [];
+	$scope.noticiaSelecionada = [];
 
-  //pegando todos os dados
-  $scope.loadData = function(keywords,data) {
-    var params;
+	$scope.filter = {
+		time: $scope.config.filter.period.values[2].value,
+		profileType: 'page',
+		actor: $scope.config.filter.actors[0].tag,
+		word: undefined,
+		theme: undefined,
+		tag: undefined,
+		page: 1,
+		per_page: 25,
+		images: true,
+		limit: 25
+	};
 
-    if(keywords.length > 1){
-        if(data != undefined) {
-            data = data.replace('I','/');
-            params = {'per_page':$scope.filter.limit,'page':$scope.filter.page, 'filters[keywords]':keywords, 'filters[datePublished]':data};
-        } else {
-            params = {'per_page':$scope.filter.limit,'page':$scope.filter.page, 'filters[keywords]':keywords};
-        }
-    } else {
-        if(data != undefined) {
-            data = data.replace('I','/');
-            params = {'per_page':$scope.quant,'page':$scope.numPage, 'filters[datePublished]':data};
-        } else {
-        params = {'per_page':$scope.quant,'page':$scope.numPage};
-        }
-    };
-
-
-    $http({
+	$http({
         url: $scope.url,
-        method:'GET',
-        params:params
+        method:'GET'
+        //params:params
         //cache: true
     })
     .then(function (response) {
@@ -55,8 +34,43 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal) {
     function (err) {
         console.log("Notícia não encontrada");
         document.getElementById('notNovas').innerHTML ="<h1><b>Erro ao carregar conteúdo</b></h1><br><br><a href='#/dashboard' onclick='javascript:location.reload();'>Página inicial</a>";
-    });
-  };
+	});
+	
+	//pegando todos os dados
+	$scope.loadData = function(keywords,data) {
+		var params;
+
+		if(keywords.length > 1){
+			if(data != undefined) {
+				data = data.replace('I','/');
+				params = {'per_page':$scope.filter.limit,'page':$scope.filter.page, 'filters[keywords]':keywords, 'filters[datePublished]':data};
+			} else {
+				params = {'per_page':$scope.filter.limit,'page':$scope.filter.page, 'filters[keywords]':keywords};
+			}
+		} else {
+			if(data != undefined) {
+				data = data.replace('I','/');
+				params = {'per_page':$scope.quant,'page':$scope.numPage, 'filters[datePublished]':data};
+			} else {
+			params = {'per_page':$scope.quant,'page':$scope.numPage};
+			}
+		};
+
+
+		$http({
+			url: $scope.url,
+			method:'GET',
+			params:params
+			//cache: true
+		})
+		.then(function (response) {
+			$scope.dados = response.data.data;
+		},
+		function (err) {
+			console.log("Notícia não encontrada");
+			document.getElementById('notNovas').innerHTML ="<h1><b>Erro ao carregar conteúdo</b></h1><br><br><a href='#/dashboard' onclick='javascript:location.reload();'>Página inicial</a>";
+		});
+	};
 
 	//teste de botões com ng-click
 	$scope.cliquei = function(msg) {
@@ -87,6 +101,16 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal) {
 			$scope.selected.splice($scope.selected.indexOf(obj),1);
 	};
 
+	$scope.adicionaNoticia = function (data) {
+        //verifica se a notícia já não foi adicionada
+        if($scope.noticiaSelecionada.indexOf(data)<0){
+            $scope.noticiaSelecionada.push(data);
+        }
+        else {
+            $scope.noticiaSelecionada.splice($scope.noticiaSelecionada.indexOf(data),1);
+        }
+    };
+
 	$scope.excluirObj = function() {
 		//excluir vários objs
 		if($scope.selected.length >1) {
@@ -111,6 +135,24 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal) {
 
 	};
 
+	
+	$scope.geraRelatorio = function () {
+        document.getElementById('modalTitle').innerHTML = 'Relatório customizado';
+        var conteudo='';
+        var angularDateFilter = $filter('date');
+        //percorre todas as notícias selecionadas
+        for (index = 0; index < $scope.noticiaSelecionada.length; ++index) {
+            conteudo = conteudo.concat('<h4><b>',$scope.noticiaSelecionada[index].headline,'</b></h4><br>');
+            conteudo = conteudo.concat('Publicado em ',angularDateFilter($scope.noticiaSelecionada[index].datePublished, "dd/MM/yyyy 'às' HH'h'mm'",'UTC-4'),'<br>');
+            conteudo = conteudo.concat('Link interno: https://hash-inep.labic.net/#/dashboard/noticia?id=',$scope.noticiaSelecionada[index].id,'<br>');
+            conteudo = conteudo.concat('Link externo: ',$scope.noticiaSelecionada[index].url,'<br><br>');
+        }
+        document.getElementById('modalBody').innerHTML = conteudo;
+        document.getElementById('abrirModal').style.display="block";
+        document.getElementsByClassName('navbar')[0].style.zIndex = '0';
+    
+    };
+
 	// Watch assiste a todos os filtros presentes na página esperando alguma alteração.
 	$scope.$watch('filter', function (newFilter, oldFilter) {
 
@@ -123,19 +165,16 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal) {
 		} else {
 
 			if (newFilter.time != oldFilter.time) {
-				$scope.loadItems(newFilter.status, newFilter.ordem, undefined);
+				//$scope.loadItems(newFilter.status, newFilter.ordem, undefined);
 			}
 			if (newFilter.actor != oldFilter.actor) {
-				$scope.loadItems(newFilter.status, newFilter.ordem, newFilter.name);
+				//$scope.loadItems(newFilter.status, newFilter.ordem, newFilter.name);
 			}
 
 			if (newFilter.page != oldFilter.page) {
-				$scope.loadItems(newFilter.status, newFilter.ordem, newFilter.name);
+				//$scope.loadItems(newFilter.status, newFilter.ordem, newFilter.name);
 			}
 
-			if (newFilter.images != oldFilter.images) {
-				$scope.loadItems(newFilter.status, newFilter.ordem, newFilter.name);
-			}
 		}
 
 	}, true);

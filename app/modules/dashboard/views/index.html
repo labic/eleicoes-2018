@@ -1,12 +1,13 @@
 <!--  menu topo  -->
-<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="main">
+<div ng-controller="main">
+<nav class="navbar navbar-inverse navbar-fixed-top">
 <div class="container">
     <searching> </searching></div>
 </nav>
 
 <div id="conteudo">
     <!--  blocos de notícias novas  -->
-  <div id="notNovas" ng-controller="gridController" ng-init="limNot = 20;" >
+  <div id="notNovas" ng-init="limNot = 20;" >
 
     <!--  ícone fixo para relatório  -->
     <button style="position:fixed; margin-left: 70%;" ng-click="open('lg','modules/dashboard/views/modal.html',noticiaSelecionada)" title="Gerar relatório manual">
@@ -15,16 +16,16 @@
 
       <div ng-repeat="nov in dados | limitTo:limNot">
       <!-- seção que aparece no modo de exibição normal -->
-        <section layout="row" layout-align="end" layout-wrap align="end" ng-show="exibirImagem()">
+        <section layout="row" layout-align="end" layout-wrap align="end" ng-show="filter.images">
           <input type="checkbox" ng-click="adicionaNoticia(nov)" title="Adicionar ao relatório" >
           <button ng-click="deletar(nov)" title="Excluir notícia">&#10060;</button>
         </section>
-        <noticias info='nov' class="row" ng-show="exibirImagem()"></noticias>
+        <noticias info='nov' class="row" ng-show="filter.images"></noticias>
 
       <!-- seção que aparece no modo de exibição lista -->
       <div class="row">
-        <modolista info='nov' class="col-md-11" ng-show="!exibirImagem()"></modolista>
-        <div class="col-md-1" ng-show="!exibirImagem()">
+        <modolista info='nov' class="col-md-11" ng-show="!filter.images"></modolista>
+        <div class="col-md-1" ng-show="!filter.images">
           <input type="checkbox" ng-click="adicionaNoticia(nov)" >
           <button ng-click="deletar(nov);dados.splice($index,1)">&#10060;</button>
         </div>
@@ -34,11 +35,12 @@
       </div>
       <br><br>
       <section layout="row" layout-align="center" layout-wrap align="center">
-        <button ng-click="loadMore(-1)" style="margin-right: 10px;"> Página anterior </button>
-        <button ng-click="loadMore(+1)" > Página seguinte </button>
+        <button ng-click="" style="margin-right: 10px;"> Página anterior </button>
+        <button ng-click="" > Página seguinte </button>
         <br><br>
       </section>
   </div>
       <!--  footer  -->
     <div id="footer"></div>
+</div>
 </div>

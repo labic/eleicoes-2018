@@ -1,4 +1,4 @@
-<div class="col-md-9" ng-controller="gridController" style="padding-right: 10%;">
+<div class="col-md-9" style="padding-right: 10%;">
   	<div class="row">
       <a href="#/dashboard/noticia?id={{::info.id}}" target="_blank" style="display: inline">
       <h3 ng-show="info.headline === null">[Título indisponível]</h3><h3>{{:: info.headline }}</h3></a>
@@ -13,36 +13,9 @@
   		<input type="button" value="{{:: tag }}" ng-repeat = "tag in info.keywords | limitTo:15" ng-click="quickSearch(tag)" title="Pesquisar por esse tema">
   	</div>
 </div>
-<div class="col-md-3" ng-controller="gridController">
+<div class="col-md-3">
   <button type="button" style="background:url({{:: info.image }}) center center;background-size: cover; width:100%; height: 25%;" class="thumbnail" ng-click="showDialog(info)"><h4 ng-show="info.image === null">Imagem indisponível</h4></button>
       <div layout-align="start" layout-wrap align="end">
       <label><h5  ng-click="showDialog(info)" >Pré-visualizar</h5></label>
     </div>
 </div>
-
-postId: "www.facebook.com.br/109597815616_10155490503465617",
-fromName: "VEJA",
-name: "Enem 2017: como escrever uma redação nota máxima",
-message: "#VEJA #TVEJA",
-commentsCount: 159,
-likesCount: 286,
-sharesCount: 68,
-fullPicture: "https://external.xx.fbcdn.net/safe_image.php?d=AQBfTzb92gsHbvN6&url=http%3A%2F%2Fabrilveja.files.wordpress.com%2F2016%2F10%2Feducacao-vestibular-enem-fuvest-20161005-05.jpg%3Fquality%3D70%26strip%3Dinfo%26w%3D680%26h%3D453%26crop%3D1&_nc_hash=AQC2TEm1yCtqxod0",
-caption: "veja.abril.com.br",
-createdTime: "Sun Oct 22 14:39:01 UTC 2017",
-createdTimeMs: 1508683141000,
-hashtags: [
-"#VEJA",
-"#TVEJA"
-],
-reactions: {
-angry: 0,
-haha: 1,
-like: 152,
-love: 0,
-none: 0,
-sad: 0,
-thankful: 0,
-wow: 0
-}
-}
