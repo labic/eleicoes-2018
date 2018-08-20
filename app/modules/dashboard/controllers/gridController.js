@@ -3,11 +3,27 @@ angular
     .controller("gridController", function($scope, $http, $location, $filter) { 
 
     $scope.url = 'https://inep-hash-data-api-dev.herokuapp.com/articles';
+    //$scope.url = 'http://209.97.130.59:4567/facedata?time=4&keyword=educação básica';
+    
     $scope.keywords = [];
     $scope.dados = [];
     $scope.quant = 10;
     $scope.numPage = 1;
     $scope.noticiaSelecionada = [];
+
+    $http({
+        url: $scope.url,
+        method:'GET'
+        //params:params
+        //cache: true
+    })
+    .then(function (response) {
+        $scope.dados = response.data.data;
+    },
+    function (err) {
+        console.log("Notícia não encontrada");
+        document.getElementById('notNovas').innerHTML ="<h1><b>Erro ao carregar conteúdo</b></h1><br><br><a href='#/dashboard' onclick='javascript:location.reload();'>Página inicial</a>";
+    });
     
     //pegando todos os dados
     $scope.loadData = function(keywords,data) {

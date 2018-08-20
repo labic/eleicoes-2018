@@ -6,23 +6,8 @@
 
 <div id="conteudo">
     <!--  blocos de notícias novas  -->
-  <div id="notNovas" ng-controller="gridController" ng-init="limNot = 20; treatURL()" >
+  <div id="notNovas" ng-controller="gridController" ng-init="limNot = 20;" >
 
-    <div class="modal" id="abrirModal">
-    <div class="modal-content" align="justify">
-      <span class="close-heavy" id="fecharModal">&times;</span>
-      <h3><div id="modalTitle"></div></h3><br><br>
-      <div id="modalBody"></div><br>
-      <script type="text/javascript">
-      // When the user clicks on <span> (x), close the modal
-      document.getElementById('fecharModal').onclick = function() {
-        document.getElementById('abrirModal').style.display = "none";
-        document.getElementsByClassName('navbar')[0].style.zIndex = '1';
-      };
-
-      </script>
-    </div>
-    </div>
     <!--  ícone fixo para relatório  -->
     <button style="position:fixed; margin-left: 70%;" ng-click="open('lg','modules/dashboard/views/modal.html',noticiaSelecionada)" title="Gerar relatório manual">
       <img src="img/dashboard/icon3.PNG" style="height: 50px; width: auto; cursor: pointer">
