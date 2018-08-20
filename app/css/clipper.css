@@ -199,10 +199,18 @@ button{
   width:auto;
   height: auto;
   max-width:80%;
+  max-height: 600px;
 }
 
 .fb-reacts {
   display:inline-block;
   padding: 20px 30px 10px 10px;
-  
+}
+
+.fb-reacts img{
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+
 }
