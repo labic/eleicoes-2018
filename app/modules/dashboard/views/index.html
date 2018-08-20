@@ -18,7 +18,6 @@
       <!-- seção que aparece no modo de exibição normal -->
         <section layout="row" layout-align="end" layout-wrap align="end" ng-show="filter.images">
           <input type="checkbox" ng-click="adicionaNoticia(nov)" title="Adicionar ao relatório" >
-          <button ng-click="deletar(nov)" title="Excluir notícia">&#10060;</button>
         </section>
         <noticias info='nov' class="row" ng-show="filter.images"></noticias>
 
@@ -27,7 +26,6 @@
         <modolista info='nov' class="col-md-11" ng-show="!filter.images"></modolista>
         <div class="col-md-1" ng-show="!filter.images">
           <input type="checkbox" ng-click="adicionaNoticia(nov)" >
-          <button ng-click="deletar(nov);dados.splice($index,1)">&#10060;</button>
         </div>
       </div>
 

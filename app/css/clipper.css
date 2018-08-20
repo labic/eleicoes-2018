@@ -59,20 +59,14 @@ html,body {
   right: 5%;
   left:8%;
   height: 12%;
-  padding: 1.5% 0 1.5% 0;
+  padding: 3% 0 3% 0;
   border: 1px gray;
   background-color: #FFFFFF;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
   color:#365899;
+  font-size: 150%;
 }
 
-.navbar-fixed-top img {
-  max-width: 200px;
-  height: 30px;
-  width: auto;
-  display: block;
-  margin: auto;
-}
 
 .menu_space {
   width: 20%;
