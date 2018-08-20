@@ -1,9 +1,9 @@
 html,body {
   font-family: Open-sans, sans-serif;;
-  background-color: #F2F2F2;
+  background-color: #E9EBEE;
   border: none;
   width: 100%;
-  color: black;
+  color: #365899;
 }
 
 #conteudo {
@@ -38,12 +38,12 @@ html,body {
   outline: none;
   box-shadow: 0;
   border:1px solid #D6D6D6;
-  color:#0072D4;
+  color:#365899;
   margin: 10px 5px 0px 0px;
   padding:3px 10px 3px 10px;
 }
 
-#conteudo h3, .col-md-11 h4 { color:#0072D4; }
+#conteudo h3, .col-md-11 h4 { color:#365899; }
 #conteudo h5 { color:#5D5D5D; }
 
 #paginaNoticia img {
@@ -63,7 +63,7 @@ html,body {
   border: 1px gray;
   background-color: #FFFFFF;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
-  color:#0072D4;
+  color:#365899;
 }
 
 .navbar-fixed-top img {
@@ -100,7 +100,7 @@ html,body {
   border: none;
   border-bottom: 1px solid #2B3044;
   padding: 3px 10px;
-  color:#0072D4;
+  color:#365899;
   -moz-appearance: none; /* Remove estilo padrão do FireFox */
   appearance: none; /* Remove estilo padrão do FireFox*/
 }
