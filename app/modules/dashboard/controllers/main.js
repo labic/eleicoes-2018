@@ -4,13 +4,13 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 	$scope.config = {
 		filter: settings.get('dashboard.filters')
 	};
-	$scope.url = 'http://209.97.130.59:4567/facedata?time=6&keyword=educa%C3%A7%C3%A3o%20b%C3%A1sica'
+	$scope.url = 'http://209.97.130.59:4567/facedata?'
 	//$scope.url = 'https://inep-hash-data-api-dev.herokuapp.com/articles';
 	$scope.dados = [];
 	$scope.noticiaSelecionada = [];
 
 	$scope.filter = {
-		time: $scope.config.filter.period.values[2].value,
+		time: $scope.config.filter.period.values[2].number,
 		profileType: 'page',
 		actor: $scope.config.filter.actors[0].tag,
 		word: undefined,
@@ -24,8 +24,11 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 
 	$http({
         url: $scope.url,
-        method:'GET'
-        //params:params
+        method:'GET',
+        params:{
+			time:$scope.filter.time,
+			keyword:$scope.filter.actor
+		}
         //cache: true
     })
     .then(function (response) {
@@ -37,24 +40,11 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 	});
 	
 	//pegando todos os dados
-	$scope.loadData = function(keywords,data) {
-		var params;
-
-		if(keywords.length > 1){
-			if(data != undefined) {
-				data = data.replace('I','/');
-				params = {'per_page':$scope.filter.limit,'page':$scope.filter.page, 'filters[keywords]':keywords, 'filters[datePublished]':data};
-			} else {
-				params = {'per_page':$scope.filter.limit,'page':$scope.filter.page, 'filters[keywords]':keywords};
-			}
-		} else {
-			if(data != undefined) {
-				data = data.replace('I','/');
-				params = {'per_page':$scope.quant,'page':$scope.numPage, 'filters[datePublished]':data};
-			} else {
-			params = {'per_page':$scope.quant,'page':$scope.numPage};
-			}
-		};
+	$scope.loadData = function() {
+		var params = {
+			time:$scope.filter.time,
+			keyword:$scope.filter.actor
+		}
 
 
 		$http({
@@ -159,22 +149,15 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 		$(".dashboard").scrollTop("slow");
 		$scope.countpage = 0;
 
-		if ($scope.filter.page > 1) {
-			//carregar itens da primeira página
-			$scope.filter.page = 1;
-		} else {
+		if (newFilter.time != oldFilter.time) {
+			$scope.loadData();
+		}
+		if (newFilter.actor != oldFilter.actor) {
+			$scope.loadData();
+		}
 
-			if (newFilter.time != oldFilter.time) {
-				//$scope.loadItems(newFilter.status, newFilter.ordem, undefined);
-			}
-			if (newFilter.actor != oldFilter.actor) {
-				//$scope.loadItems(newFilter.status, newFilter.ordem, newFilter.name);
-			}
-
-			if (newFilter.page != oldFilter.page) {
-				//$scope.loadItems(newFilter.status, newFilter.ordem, newFilter.name);
-			}
-
+		if (newFilter.page != oldFilter.page) {
+			//$scope.loadItems(newFilter.status, newFilter.ordem, newFilter.name);
 		}
 
 	}, true);
