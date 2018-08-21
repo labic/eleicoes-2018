@@ -188,6 +188,7 @@ button{
   font-size: 15px;
   margin-bottom: 10px;
   padding: 10px 30px 10px 30px;
+  text-align: justify;
 }
 
 .fb-post-img {
@@ -203,8 +204,10 @@ button{
 }
 
 .fb-reacts {
-  display:inline-block;
+  width: 100%;
+  display:inline;
   padding: 20px 30px 10px 10px;
+
 }
 
 .fb-reacts img{

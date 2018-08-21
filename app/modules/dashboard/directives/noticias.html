@@ -14,6 +14,7 @@
   </div>
 
   <div class="fb-reacts">
+    <div style="float:left">
     <label ng-show="info.reactions.like > 0">
       {{info.reactions.like}}
       <img src="img/dashboard/like.png">
@@ -38,7 +39,10 @@
       {{info.reactions.angry}}
       <img src="img/dashboard/angry.png">
     </label>
-    <div class="display:inline; float: right">{{info.commentsCount}} comentários   {{info.sharesCount}} compartilhamentos</div>
+    </div>
+    <div style="float:right; text-align: right">
+    <div>{{info.commentsCount}} comentários   {{info.sharesCount}} compartilhamentos</div>
+    </div>
     <br>
     <input type="button" value="{{:: tag }}" ng-repeat = "tag in info.hashtags | limitTo:15" ng-click="" title="Pesquisar por esse tema">
   </div>
