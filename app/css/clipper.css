@@ -43,9 +43,6 @@ html,body {
   padding:3px 10px 3px 10px;
 }
 
-#conteudo h3, .col-md-11 h4 { color:#365899; }
-#conteudo h5 { color:#5D5D5D; }
-
 #paginaNoticia img {
   max-width: 60%;
   height: auto;
@@ -152,12 +149,6 @@ button{
   display: inline-block;
   line-height: 0px;
   padding: 11px 3px; 
-}
-
-.col-md-3 label:hover{
-  color: #004C84;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .fb-post-box {

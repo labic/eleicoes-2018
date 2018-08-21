@@ -1,9 +1,43 @@
-<div class="col-md-11">
-  	<div class="row">
-	  <a href="#/dashboard/noticia?id={{::info.id}}" target="_blank" style="display: inline">
-	  <h3 ng-show="info.headline === null">[Título indisponível]</h3><h3>{{:: info.headline }}</h3></a>
+<div class="fb-post-box">
+	<input type="checkbox" style="margin-left:98%" ng-click="adicionaNoticia(nov)" >
+  <div class="fb-post-header">
+		<label>{{:: info.fromName }}</label>
+		
+		<a href="{{info.postId}}"><h4 ng-show="info.name === undefined">[Título indisponível]</h4>
+	  <h4>{{:: info.name }}</h4></a>
 	</div>
-	<div class="row" ng-init="fonte = info.url.split('/')[2]">
-		<h5>Publicado por <a href="http://{{fonte}}" target="_blank" style="display: inline">{{::fonte}}</a> em <b ng-show="info.datePublished === null">[indisponível]</b>{{::info.datePublished | date:"dd/MM/yyyy 'às' HH'h'mm":'UTC-4'}}  e coletado em {{::info.dateCreated | date:"dd/MM/yyyy 'às' HH'h'mm":'UTC-4'}}</h5>
-	</div>
+	<br>
+	<div class="fb-reacts">
+			<div style="float:left">
+			<label ng-show="info.reactions.like > 0">
+				{{info.reactions.like}}
+				<img src="img/dashboard/like.png">
+			</label>
+			<label ng-show="info.reactions.love > 0">
+					{{info.reactions.love}}
+					<img src="img/dashboard/love.png">
+			</label>
+			<label ng-show="info.reactions.haha > 0">
+				{{info.reactions.haha}}
+				<img src="img/dashboard/haha.png">
+			</label>
+			<label ng-show="info.reactions.wow > 0">
+					{{info.reactions.wow}}
+					<img src="img/dashboard/wow.png">
+			</label>
+			<label ng-show="info.reactions.sad > 0">
+				{{info.reactions.sad}}
+				<img src="img/dashboard/sad.png">
+			</label>
+			<label ng-show="info.reactions.angry > 0">
+				{{info.reactions.angry}}
+				<img src="img/dashboard/angry.png">
+			</label>
+			</div>
+			<div style="float:right; text-align: right">
+			<div>{{info.commentsCount}} <img src="img/dashboard/comment.png">  {{info.sharesCount}} <img src="img/dashboard/share.png"></div>
+			</div>
+			<br>
+			<input type="button" value="{{:: tag }}" ng-repeat = "tag in info.hashtags | limitTo:15" ng-click="" title="Pesquisar por esse tema">
+		</div>
 </div>

@@ -2,7 +2,10 @@
     <input type="checkbox" style="margin-left:98%" ng-click="adicionaNoticia(nov)" >
   <div class="fb-post-header">
     <img src="img/dashboard/perfil.png">
-    <label>{{:: info.name }}</label>
+    <label>{{:: info.fromName }}</label>
+    <br>
+    <a href="{{info.postId}}"><h4 ng-show="info.name === undefined">[Título indisponível]</h4>
+    <h4>{{:: info.name }}</h4></a>
   </div>
 
   <div class="fb-post-text">
@@ -10,7 +13,7 @@
   </div>
 
   <div class="fb-post-img">
-    <img src="{{:: info.fullPicture }}"> 
+      <a href="{{info.postId}}"><img src="{{:: info.fullPicture }}"></a>
   </div>
 
   <div class="fb-reacts">

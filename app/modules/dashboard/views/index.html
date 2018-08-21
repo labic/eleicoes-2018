@@ -16,11 +16,11 @@
 
       <div ng-repeat="nov in dados | limitTo:limNot">
       <!-- seção que aparece no modo de exibição normal -->
-        <noticias info='nov' class="row" ng-show="filter.images"></noticias>
+        <noticias info='nov' ng-show="filter.images"></noticias>
 
       <!-- seção que aparece no modo de exibição lista -->
       <div class="row">
-        <modolista info='nov' class="col-md-11" ng-show="!filter.images"></modolista>
+        <modolista info='nov' ng-show="!filter.images"></modolista>
       </div>
 
       </div>
