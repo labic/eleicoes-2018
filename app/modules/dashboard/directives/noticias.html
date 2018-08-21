@@ -2,47 +2,44 @@
     <input type="checkbox" style="margin-left:98%" ng-click="adicionaNoticia(nov)" >
   <div class="fb-post-header">
     <img src="img/dashboard/perfil.png">
-    <label ng-show="info.headline === null">[Título indisponível]</label><label>{{:: info.headline }}</label>
+    <label>{{:: info.name }}</label>
   </div>
 
   <div class="fb-post-text">
-    {{::info.description}}
+    {{::info.message}}
   </div>
 
   <div class="fb-post-img">
-    <img src="{{:: info.image }}"> 
+    <img src="{{:: info.fullPicture }}"> 
   </div>
 
   <div class="fb-reacts">
-    <img src="img/dashboard/like.png">
-    <img src="img/dashboard/love.png">
-    <img src="img/dashboard/haha.png">
-    <img src="img/dashboard/wow.png">
-    <img src="img/dashboard/sad.png">
-    <img src="img/dashboard/angry.png">
+    <label ng-show="info.reactions.like > 0">
+      {{info.reactions.like}}
+      <img src="img/dashboard/like.png">
+    </label>
+    <label ng-show="info.reactions.love > 0">
+        {{info.reactions.love}}
+        <img src="img/dashboard/love.png">
+    </label>
+    <label ng-show="info.reactions.haha > 0">
+      {{info.reactions.haha}}
+      <img src="img/dashboard/haha.png">
+    </label>
+    <label ng-show="info.reactions.wow > 0">
+        {{info.reactions.wow}}
+        <img src="img/dashboard/wow.png">
+    </label>
+    <label ng-show="info.reactions.sad > 0">
+      {{info.reactions.sad}}
+      <img src="img/dashboard/sad.png">
+    </label>
+    <label ng-show="info.reactions.angry > 0">
+      {{info.reactions.angry}}
+      <img src="img/dashboard/angry.png">
+    </label>
+    <div class="display:inline; float: right">{{info.commentsCount}} comentários   {{info.sharesCount}} compartilhamentos</div>
     <br>
-    <input type="button" value="{{:: tag }}" ng-repeat = "tag in info.keywords | limitTo:15" ng-click="" title="Pesquisar por esse tema">
+    <input type="button" value="{{:: tag }}" ng-repeat = "tag in info.hashtags | limitTo:15" ng-click="" title="Pesquisar por esse tema">
   </div>
 </div>
-
-<!-- <div class="col-md-9" style="padding-right: 10%;">
-  	<div class="row">
-      <a href="#/dashboard/noticia?id={{::info.id}}" target="_blank" style="display: inline">
-      <h3 ng-show="info.headline === null">[Título indisponível]</h3><h3>{{:: info.headline }}</h3></a>
-  	</div>
-    <div class="row">
-      <h4>{{::info.description}}</h4>
-    </div>
-  	<div class="row" ng-init="fonte = info.url.split('/')[2]">
-  		<h5  style="font-family: Open-sans">Publicado por <a href="http://{{fonte}}" target="_blank" style="display: inline">{{::fonte}}</a> em <b ng-show="info.datePublished === null">[indisponível]</b>{{::info.datePublished | date:"dd/MM/yyyy 'às' HH'h'mm":'UTC-4'}}  e coletado em {{::info.dateCreated | date:"dd/MM/yyyy 'às' HH'h'mm":'UTC-4'}}</h5>
-  	</div>
-  	<div class="row">
-  		<input type="button" value="{{:: tag }}" ng-repeat = "tag in info.keywords | limitTo:15" ng-click="quickSearch(tag)" title="Pesquisar por esse tema">
-  	</div>
-</div>
-<div class="col-md-3">
-  <button type="button" style="background:url({{:: info.image }}) center center;background-size: cover; width:100%; height: 25%;" class="thumbnail" ng-click="showDialog(info)"><h4 ng-show="info.image === null">Imagem indisponível</h4></button>
-      <div layout-align="start" layout-wrap align="end">
-      <label><h5  ng-click="showDialog(info)" >Pré-visualizar</h5></label>
-    </div>
-</div> -->
