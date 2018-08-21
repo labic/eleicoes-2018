@@ -46,7 +46,6 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 			keyword:$scope.filter.actor
 		}
 
-
 		$http({
 			url: $scope.url,
 			method:'GET',
@@ -84,63 +83,44 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 		});
 	};
 
-	$scope.selectObject = function (obj) {
-		if($scope.selected.indexOf(obj) < 0)
-			$scope.selected.push(obj);
-		else
-			$scope.selected.splice($scope.selected.indexOf(obj),1);
-	};
-
 	$scope.adicionaNoticia = function (data) {
         //verifica se a notícia já não foi adicionada
         if($scope.noticiaSelecionada.indexOf(data)<0){
             $scope.noticiaSelecionada.push(data);
+			console.log('adicionei')
         }
         else {
             $scope.noticiaSelecionada.splice($scope.noticiaSelecionada.indexOf(data),1);
         }
     };
 
-	$scope.excluirObj = function() {
-		//excluir vários objs
-		if($scope.selected.length >1) {
-			var decisao = confirm("Deseja mesmo excluir estes objetos?");
-			if (decisao) {
-				$scope.selected.forEach( function (item,index) {
-					$scope.arquivos.splice($scope.arquivos.indexOf($scope.selected[index]),1);
-					//enviar request pro servidor
-				});
+	// $scope.excluirObj = function() {
+	// 	//excluir vários objs
+	// 	if($scope.selected.length >1) {
+	// 		var decisao = confirm("Deseja mesmo excluir estes objetos?");
+	// 		if (decisao) {
+	// 			$scope.selected.forEach( function (item,index) {
+	// 				$scope.arquivos.splice($scope.arquivos.indexOf($scope.selected[index]),1);
+	// 				//enviar request pro servidor
+	// 			});
 
-				$scope.selected = [];
-			};
-		} else {
-		//excluir um obj
-			var decisao = confirm("Deseja mesmo excluir este objeto?");
-			if (decisao) {
-				$scope.arquivos.splice($scope.arquivos.indexOf($scope.selected[0]),1);
-				$scope.selected = [];
-				//enviar request pro servidor
-			};
-		};
+	// 			$scope.selected = [];
+	// 		};
+	// 	} else {
+	// 	//excluir um obj
+	// 		var decisao = confirm("Deseja mesmo excluir este objeto?");
+	// 		if (decisao) {
+	// 			$scope.arquivos.splice($scope.arquivos.indexOf($scope.selected[0]),1);
+	// 			$scope.selected = [];
+	// 			//enviar request pro servidor
+	// 		};
+	// 	};
 
-	};
+	// };
 
 	
 	$scope.geraRelatorio = function () {
-        document.getElementById('modalTitle').innerHTML = 'Relatório customizado';
-        var conteudo='';
-        var angularDateFilter = $filter('date');
-        //percorre todas as notícias selecionadas
-        for (index = 0; index < $scope.noticiaSelecionada.length; ++index) {
-            conteudo = conteudo.concat('<h4><b>',$scope.noticiaSelecionada[index].headline,'</b></h4><br>');
-            conteudo = conteudo.concat('Publicado em ',angularDateFilter($scope.noticiaSelecionada[index].datePublished, "dd/MM/yyyy 'às' HH'h'mm'",'UTC-4'),'<br>');
-            conteudo = conteudo.concat('Link interno: https://hash-inep.labic.net/#/dashboard/noticia?id=',$scope.noticiaSelecionada[index].id,'<br>');
-            conteudo = conteudo.concat('Link externo: ',$scope.noticiaSelecionada[index].url,'<br><br>');
-        }
-        document.getElementById('modalBody').innerHTML = conteudo;
-        document.getElementById('abrirModal').style.display="block";
-        document.getElementsByClassName('navbar')[0].style.zIndex = '0';
-    
+            
     };
 
 	// Watch assiste a todos os filtros presentes na página esperando alguma alteração.
