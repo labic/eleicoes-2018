@@ -1,13 +1,53 @@
 {
-  "actors": [{
-        "title": "Educação Básica",
-        "tag": "educação básica"
-      },{
+  "actors": [
+    {
+      "title": "Educação Básica",
+      "tag": "educação básica"
+    },{
       "title": "Mídia",
       "tag": "mídia"
     },{
-      "title": "Educacional",
-      "tag": "educacional"
+      "title": "Debate",
+      "tag": "debate"
+    },{
+      "title": "Álvaro Dias",
+      "tag": "álvaro dias"
+    },{
+      "title": "Cabo Daciolo",
+      "tag": "cabo daciolo"
+    },{
+      "title": "Ciro Gomes",
+      "tag": "ciro gomes"
+    },{
+      "title": "Geraldo Alckmin",
+      "tag": "geraldo alckmin"
+    },{
+      "title": "Guilherme Boulos",
+      "tag": "guilherme boulos"
+    },{
+      "title": "Henrique Meirelles",
+      "tag": "henrique meirelles"
+    },{
+      "title": "Jair Bolsonaro",
+      "tag": "jair bolsonaro"
+    },{
+      "title": "João Amoedo",
+      "tag": "joão amoedo"
+    },{
+      "title": "João Goulart Filho",
+      "tag": "joão goulart filho"
+    },{
+      "title": "José Maria Eymael",
+      "tag": "josé maria eymael"
+    },{
+      "title": "Lula",
+      "tag": "lula"
+    },{
+      "title": "Marina Silva",
+      "tag": "marina silva"
+    },{
+      "title": "Vera Lúcia",
+      "tag": "vera lúcia"
     }],
   "period": {
     "type": "single-option",
