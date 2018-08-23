@@ -1,11 +1,9 @@
 <div class="fb-post-box">
     <input type="checkbox" style="margin-left:98%" >
   <div class="fb-post-header">
-    <img src="img/dashboard/perfil.png">
-    <label>{{:: info.fromName }}</label>
-    <br>
-    <a href="http://{{info.postId}}" target="_blank" style="display: inline"><h4 ng-show="info.name === undefined">[Título indisponível]</h4>
-    <h4>{{:: info.name }}</h4></a>
+    <label>{{:: info.fromName }} em {{ info.createdTimeMs | date :  "dd/MM/y 'às' H:mm" :'UTC' }}</label>
+    <a href="http://{{info.postId}}" target="_blank" style="display: inline"><h3 ng-show="info.name === undefined">[Título indisponível]</h3>
+    <h3>{{:: info.name }}</h3></a>
   </div>
 
   <div class="fb-post-text">
@@ -47,6 +45,6 @@
     <div>{{info.commentsCount}} <img src="img/dashboard/comment.png">  {{info.sharesCount}} <img src="img/dashboard/share.png"></div>
     </div>
     <br>
-    <input type="button" value="{{:: tag }}" ng-repeat = "tag in info.hashtags | limitTo:15" ng-click="" title="Pesquisar por esse tema">
+    <input type="button" value="{{:: tag }}" ng-repeat = "tag in info.hashtags | limitTo:15" disabled>
   </div>
 </div>
