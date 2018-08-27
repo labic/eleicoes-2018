@@ -11,24 +11,17 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 
 	$scope.filter = {
 		time: $scope.config.filter.period.values[2].number,
-		profileType: 'page',
-		actor: $scope.config.filter.actors[0].tag,
-		word: undefined,
-		theme: undefined,
-		tag: undefined,
-		page: 1,
-		per_page: 25,
+		keyword: $scope.config.filter.keyword[0].tag,
+		pag: 1,
+		lim: 25,
 		images: true,
-		limit: 25
+		sort:'sharesCount'
 	};
 
 	$http({
         url: $scope.url,
         method:'GET',
-        params:{
-			time:$scope.filter.time,
-			keyword:$scope.filter.actor
-		}
+        params:$scope.filter
         //cache: true
     })
     .then(function (response) {
@@ -40,11 +33,8 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 	});
 	
 	//pegando todos os dados
-	$scope.loadData = function() {
-		var params = {
-			time:$scope.filter.time,
-			keyword:$scope.filter.actor
-		}
+	$scope.loadData = function(filter) {
+		var params = filter;
 
 		$http({
 			url: $scope.url,
@@ -130,14 +120,15 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 		$scope.countpage = 0;
 
 		if (newFilter.time != oldFilter.time) {
-			$scope.loadData();
+			$scope.loadData(newFilter);
 		}
-		if (newFilter.actor != oldFilter.actor) {
-			$scope.loadData();
+		if (newFilter.keyword != oldFilter.keyword) {
+			console.log('olha aqui')
+			$scope.loadData(newFilter);
 		}
 
-		if (newFilter.page != oldFilter.page) {
-			//$scope.loadItems(newFilter.status, newFilter.ordem, newFilter.name);
+		if (newFilter.pag != oldFilter.pag) {
+			$scope.loadData(newFilter);
 		}
 
 	}, true);
