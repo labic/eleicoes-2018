@@ -7,13 +7,15 @@
 
 <div id="conteudo">
     <!--  blocos de notícias novas  -->
-  <div id="notNovas" ng-init="limNot = 50;" >
+  <div id="notNovas" >
 
     <!--  ícone fixo para relatório  -->
     <button style="position:fixed; margin-left: 70%;" ng-click="open('lg','modules/dashboard/views/modal.html',noticiaSelecionada)" title="Gerar relatório manual">
       <img src="img/dashboard/icon3.PNG" style="height: 50px; width: auto; cursor: pointer">
     </button>
 
+    <div id="Erro"></div>
+    
       <div ng-repeat="nov in dados">
       <!-- seção que aparece no modo de exibição normal -->
         <noticias info='nov' ng-show="filter.images"></noticias>
