@@ -10,22 +10,22 @@
       "title": "Mídia Selecionada",
       "tag": "midia_selecionada"
     },{
-      "title": "Aridelmo",
+      "title": "Aridelmo Teixeira",
       "tag": "aridelmo"
     },{
-      "title": "Casagrande",
+      "title": "Renato Casagrande",
       "tag": "casagrande"
     },{
-      "title": "Jackeline",
+      "title": "Jackeline Oliveira",
       "tag": "jackeline"
     },{
-      "title": "Manato",
+      "title": "Carlos Manato",
       "tag": "manato"
     },{
-      "title": "Moreira",
+      "title": "André Moreira",
       "tag": "moreira"
     },{
-      "title": "Rose",
+      "title": "Rose de Freitas",
       "tag": "rose"
     }],
   "period": {
@@ -33,25 +33,35 @@
     "values": [
       {  
         "number": "1",
-        "time": "hora",
         "value": "1 hora"
       },{
         "number": "6",
-        "time": "horas",
         "value": "6 horas"
       },{
         "number": "24",
-        "time": "dia",
         "value": "1 dia"
       },{
         "number": "48",
-        "time": "Dias",
         "value": "2 dias"
       },{
         "number": "168",
-        "time": "Dias",
         "value": "7 dias"
       }
     ]
-  }
+  },
+  "sort": [
+      {  
+        "title": "Mais recente",
+        "value": "createdTimeMs"
+      },{
+        "title": "Mais comentado",
+        "value": "commentsCount"
+      },{
+        "title": "Mais curtido",
+        "value": "likesCount"
+      },{
+        "title": "Mais compartilhado",
+        "value": "sharesCount"
+      }
+    ]
 }

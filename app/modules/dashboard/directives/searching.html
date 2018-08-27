@@ -1,6 +1,6 @@
 <div class="row">
   <!-- espacamento -->
-  <div class="menu_space"></div>
+  <div style="width: 8%;display: inline-block;"></div>
   <!-- mudar exibicao -->
   <div class="menu_space">
       <span ng-show="!filter.images" ng-click="filter.images = !filter.images" class="glyphicon glyphicon-th" style="cursor:pointer"> Lista</span>
@@ -12,6 +12,12 @@
         <option ng-repeat="option in config.filter.period.values" value="{{option.number}}">{{option.value}}</option>
       </select>
   </div>  
+  <!-- ordenação -->
+  <div class="menu_space">
+    <select ng-model="filter.sort">
+        <option ng-repeat="option in config.filter.sort" value="{{option.value}}">{{option.title}}</option>
+      </select>
+  </div>
   <!-- conteudos -->
   <div class="menu_space">
     <select ng-model="filter.keyword">
@@ -19,6 +25,4 @@
       </select>
   </div>
 
-  <!-- espacamento -->
-  <div class="menu_space"></div>
 </div>

@@ -15,7 +15,7 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 		pag: 1,
 		lim: 25,
 		images: true,
-		sort:'sharesCount'
+		sort:$scope.config.filter.sort[3].value
 	};
 
 	$http({
@@ -116,18 +116,25 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 	// Watch assiste a todos os filtros presentes na página esperando alguma alteração.
 	$scope.$watch('filter', function (newFilter, oldFilter) {
 
-		$(".dashboard").scrollTop("slow");
+		$("#notNovas").scrollTop(0);
 		$scope.countpage = 0;
 
 		if (newFilter.time != oldFilter.time) {
+			newFilter.pag = 1;
 			$scope.loadData(newFilter);
 		}
+
 		if (newFilter.keyword != oldFilter.keyword) {
-			console.log('olha aqui')
+			newFilter.pag = 1;
 			$scope.loadData(newFilter);
 		}
 
 		if (newFilter.pag != oldFilter.pag) {
+			$scope.loadData(newFilter);
+		}
+
+		if (newFilter.sort != oldFilter.sort) {
+			newFilter.pag = 1;
 			$scope.loadData(newFilter);
 		}
 
