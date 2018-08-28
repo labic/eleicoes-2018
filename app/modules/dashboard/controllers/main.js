@@ -133,7 +133,7 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 	// Watch assiste a todos os filtros presentes na página esperando alguma alteração.
 	$scope.$watch('filter', function (newFilter, oldFilter) {
 
-		$("#notNovas").scrollTop(0);
+		$("#conteudo").scrollTop('slow');
 		$scope.countpage = 0;
 
 		if (newFilter.time != oldFilter.time) {
