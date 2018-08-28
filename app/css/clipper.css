@@ -224,16 +224,14 @@ button{
     text-align: center;
   }
 
-  .menu_space {
-    width: 70%;
-    min-height: 10px;
-    padding-right: 15px;
-    padding-left: 15px;
-    text-align: center;
+  #conteudo {
+    top: 10%;
   }
-
-  .ponta {
-    display: none;
+  .menu_space {
+    width: 31%;
+    display: inline-block;
+    min-height: 20px;
+    text-align: center;
   }
 
   .fb-post-text {
@@ -249,7 +247,7 @@ button{
     font-size: 25px;
   }
 
-  .max-midia {
+  .max-midia, .ponta {
     display: none;
   }
 }
