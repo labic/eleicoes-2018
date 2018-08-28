@@ -32,8 +32,8 @@
     "type": "single-option",
     "values": [
       {  
-        "number": "1",
-        "value": "1 hora"
+        "number": "3",
+        "value": "3 horas"
       },{
         "number": "6",
         "value": "6 horas"

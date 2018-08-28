@@ -180,7 +180,7 @@ button{
 }
 
 .fb-post-text {
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 10px;
   padding: 10px 30px 10px 0px;
   text-align: justify;
@@ -209,4 +209,45 @@ button{
   margin-right: 10px;
   height: 20px;
   width: 20px;
+}
+.ponta {
+  width: 8%;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 980px) {
+  .h3 .fb-post-header label {
+    font-size: 35px;
+  }
+
+  .navbar, .navbar-inverse, .navbar-fixed-top {
+    text-align: center;
+  }
+
+  #conteudo {
+    top: 10%;
+  }
+  .menu_space {
+    width: 31%;
+    display: inline-block;
+    min-height: 20px;
+    text-align: center;
+  }
+
+  .fb-post-text {
+    font-size: 30px;
+    margin-bottom: 10px;
+    padding: 10px 30px 10px 0px;
+    text-align: justify;
+    max-height : 130px;
+    overflow: hidden;
+  }
+
+  .fb-post-box {
+    font-size: 25px;
+  }
+
+  .max-midia, .ponta {
+    display: none;
+  }
 }

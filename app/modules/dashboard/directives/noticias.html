@@ -7,10 +7,11 @@
   </div>
 
   <div class="fb-post-text">
-    {{::info.message}}
+    <a href="http://{{info.postId}}" target="_blank" style="display: inline">
+    {{::info.message}}</a>
   </div>
 
-  <div class="fb-post-img">
+  <div class="fb-post-img max-midia">
       <a href="http://{{info.postId}}" target="_blank" style="display: inline"><img src="{{:: info.fullPicture }}"></a>
   </div>
 
