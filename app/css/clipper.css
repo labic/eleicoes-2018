@@ -210,11 +210,19 @@ button{
   height: 20px;
   width: 20px;
 }
+.ponta {
+  width: 8%;
+  display: inline-block;
+}
 
 @media only screen and (max-width: 980px) {
   .h3 .fb-post-header label {
-      
     font-size: 35px;
+  }
+
+  .ponta {
+    width: 20%;
+    display: inline-block;
   }
 
   .fb-post-text {
