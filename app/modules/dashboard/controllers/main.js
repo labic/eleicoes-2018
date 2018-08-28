@@ -21,7 +21,13 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 	$http({
         url: $scope.url,
         method:'GET',
-        params:$scope.filter
+        params:{
+			time: $scope.filter.time,
+			keyword: $scope.filter.keyword,
+			pag: $scope.filter.pag,
+			lim: $scope.filter.lim,
+			sort:$scope.filter.sort
+		}
         //cache: true
     })
     .then(function (response) {
@@ -34,7 +40,13 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 	
 	//pegando todos os dados
 	$scope.loadData = function(filter) {
-		var params = filter;
+		var params = {
+			time: filter.time,
+			keyword: filter.keyword,
+			pag: filter.pag,
+			lim: filter.lim,
+			sort:filter.sort
+		};
 
 		$http({
 			url: $scope.url,
