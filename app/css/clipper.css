@@ -220,18 +220,33 @@ button{
     font-size: 35px;
   }
 
+  .navbar, .navbar-inverse, .navbar-fixed-top {
+    text-align: center;
+  }
+
+  .menu_space {
+    width: 70%;
+    min-height: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+  }
+
   .ponta {
-    width: 20%;
-    display: inline-block;
+    display: none;
   }
 
   .fb-post-text {
-    font-size: 25px;
+    font-size: 30px;
     margin-bottom: 10px;
     padding: 10px 30px 10px 0px;
     text-align: justify;
     max-height : 130px;
     overflow: hidden;
+  }
+
+  .fb-post-box {
+    font-size: 25px;
   }
 
   .max-midia {
