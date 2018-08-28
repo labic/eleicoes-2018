@@ -4,7 +4,7 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 	$scope.config = {
 		filter: settings.get('dashboard.filters')
 	};
-	$scope.url = 'https://209.97.130.59:4567/facedata?'
+	$scope.url = 'http://209.97.130.59:4567/facedata?'
 	//$scope.url = 'https://inep-hash-data-api-dev.herokuapp.com/articles';
 	$scope.dados = [];
 	$scope.noticiaSelecionada = [];
