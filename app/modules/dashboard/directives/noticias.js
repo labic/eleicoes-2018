@@ -2,8 +2,7 @@ eleicoes.directive('noticias', function() {
   return { 
     restrict: 'E', 
     scope: { 
-      info: '=',
-      listaSel: '='
+      info: '='
     }, 
     templateUrl: 'modules/dashboard/directives/noticias.html' 
   }; 

@@ -1,69 +1,39 @@
 <!--  menu topo  -->
-<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="menuController">
-<br>
-<div class="row">
-  <div class="col-md-12 exibicao">
-    <p>
-      Modo de exibição:
-      <span ng-click="mudarExibicao(0)" class="glyphicon glyphicon-th"></span>
-      <span ng-click="mudarExibicao(1)" class="glyphicon glyphicon-th-list"></span>
-    </p>
-
-  </div>
-
-</div>
-<br>
-    <searching> </searching>
+<div ng-controller="main">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="container">
+    <searching> </searching></div>
 </nav>
 
 <div id="conteudo">
     <!--  blocos de notícias novas  -->
-  <div id="notNovas" ng-controller="gridController" ng-init="limNot = 20; treatURL()" >
+  <div id="notNovas" >
 
-    <div class="modal" id="abrirModal">
-    <div class="modal-content" align="justify">
-      <span class="close-heavy" id="fecharModal">&times;</span>
-      <h3><div id="modalTitle"></div></h3><br><br>
-      <div id="modalBody"></div><br>
-      <script type="text/javascript">
-      // When the user clicks on <span> (x), close the modal
-      document.getElementById('fecharModal').onclick = function() {
-        document.getElementById('abrirModal').style.display = "none";
-        document.getElementsByClassName('navbar')[0].style.zIndex = '1';
-      };
-
-      </script>
-    </div>
-    </div>
     <!--  ícone fixo para relatório  -->
-    <button style="position:fixed; margin-left: 70%;" ng-click="geraRelatorio()" title="Gerar relatório manual"><img src="img/dashboard/icon3.PNG" style="height: 50px; width: auto"></button>
+    <button style="position:fixed; margin-left: 70%;" ng-click="open('lg','modules/dashboard/views/modal.html',noticiaSelecionada)" title="Gerar relatório manual">
+      <img src="img/dashboard/icon3.PNG" style="height: 50px; width: auto; cursor: pointer">
+    </button>
 
-      <div ng-repeat="nov in dados | limitTo:limNot">
+    <div id="Erro"></div>
+    
+      <div ng-repeat="nov in dados">
       <!-- seção que aparece no modo de exibição normal -->
-        <section layout="row" layout-align="end" layout-wrap align="end" ng-show="exibirImagem()">
-          <input type="checkbox" ng-click="adicionaNoticia(nov)" title="Adicionar ao relatório" >
-          <button ng-click="deletar(nov)" title="Excluir notícia">&#10060;</button>
-        </section>
-        <noticias info='nov' class="row" ng-show="exibirImagem()"></noticias>
+        <noticias info='nov' ng-show="filter.images"></noticias>
 
       <!-- seção que aparece no modo de exibição lista -->
       <div class="row">
-        <modolista info='nov' class="col-md-11" ng-show="!exibirImagem()"></modolista>
-        <div class="col-md-1" ng-show="!exibirImagem()">
-          <input type="checkbox" ng-click="adicionaNoticia(nov)" >
-          <button ng-click="deletar(nov);dados.splice($index,1)">&#10060;</button>
-        </div>
+        <modolista info='nov' ng-show="!filter.images"></modolista>
       </div>
 
-      <hr style="width:100%; top: 9px; position: relative; height: 2px;" >
       </div>
       <br><br>
       <section layout="row" layout-align="center" layout-wrap align="center">
-        <button ng-click="loadMore(-1)" style="margin-right: 10px;"> Página anterior </button>
-        <button ng-click="loadMore(+1)" > Página seguinte </button>
+        <button ng-show="filter.pag > 1" ng-click="filter.pag = filter.pag - 1" style="margin-right: 10px;"> Página anterior </button>
+        <button ng-click="filter.pag = filter.pag + 1" > Página seguinte </button>
         <br><br>
       </section>
   </div>
       <!--  footer  -->
     <div id="footer"></div>
+</div>
 </div>

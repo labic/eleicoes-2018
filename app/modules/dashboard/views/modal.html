@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <label class="modal-title">Relatório manual</label>
+    <button class="modal-exit" ng-click="cancel()">X</button>
+</div>
+    
+<div class="clear">
+    <div class="modal-body">
+        <div class="box-input input-effect">
+            <label class="box-title" ng-repeat="item in obj">{{item.name}}</label>
+        </div>
+    </div>
+</div>
+
+<div class="box-button text-center">
+    <button class="btn button-modal" ng-click="newFolder(folderName)">Gerar</button>
+</div>

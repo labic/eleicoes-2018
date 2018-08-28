@@ -1,0 +1,67 @@
+{
+  "keyword": [
+    {
+      "title": "Oficial",
+      "tag": "oficial"
+    },{
+      "title": "Mídia",
+      "tag": "midia"
+    },{
+      "title": "Mídia Selecionada",
+      "tag": "midia_selecionada"
+    },{
+      "title": "Aridelmo Teixeira",
+      "tag": "aridelmo"
+    },{
+      "title": "Renato Casagrande",
+      "tag": "casagrande"
+    },{
+      "title": "Jackeline Oliveira",
+      "tag": "jackeline"
+    },{
+      "title": "Carlos Manato",
+      "tag": "manato"
+    },{
+      "title": "André Moreira",
+      "tag": "moreira"
+    },{
+      "title": "Rose de Freitas",
+      "tag": "rose"
+    }],
+  "period": {
+    "type": "single-option",
+    "values": [
+      {  
+        "number": "1",
+        "value": "1 hora"
+      },{
+        "number": "6",
+        "value": "6 horas"
+      },{
+        "number": "24",
+        "value": "1 dia"
+      },{
+        "number": "48",
+        "value": "2 dias"
+      },{
+        "number": "168",
+        "value": "7 dias"
+      }
+    ]
+  },
+  "sort": [
+      {  
+        "title": "Mais recente",
+        "value": "createdTimeMs"
+      },{
+        "title": "Mais comentado",
+        "value": "commentsCount"
+      },{
+        "title": "Mais curtido",
+        "value": "likesCount"
+      },{
+        "title": "Mais compartilhado",
+        "value": "sharesCount"
+      }
+    ]
+}

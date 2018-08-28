@@ -1,6 +1,7 @@
 var eleicoes = angular.module('eleicoes', [
   'ui.router',
   'ngResource',
+  'ui.bootstrap',
   'eleicoes.api',
   'eleicoes.core',
   'eleicoes.dashboard'

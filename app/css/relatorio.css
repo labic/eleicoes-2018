@@ -162,3 +162,73 @@
   background: white;
   color: #2b3044;
 }
+
+/* Boooooooooooootstrap changes ****************************************************************/
+
+.modal-vis{
+	width: 100%;
+	height: calc(100% - 80px);
+	background: transparent;
+}
+
+.modal-vis .modal-content{
+	background: transparent;
+	border: 0;
+	box-shadow: 0 0 0 0;
+}
+
+.modal-content{
+	border-radius: 5px;
+}
+
+/*
+.modal-body{
+	padding: 10px 20px;
+	float:left;
+}
+*/
+
+.modal-body p{
+/*	font-size: 12px;*/
+/*	margin: 10px 0px;*/
+}
+
+.modal-header{
+	padding: 5px 10px;
+	background: #FFFFFF;
+	height: 30px;
+	border-bottom: 0px;
+	color: #0072D4;
+  border-radius: 5px 5px 0px 0px;
+  margin-bottom: 10px;
+}
+
+.modal-title{
+	font-size: 18px;
+}
+
+.modal-exit{
+	font-size: 18px;
+	font-weight: bold;
+	background: transparent;
+	border: 0px; 
+	float: right;
+}
+
+.button-modal{
+	width: 150px;
+	margin: 0px 0px 10px 0px;
+	background: #90CAF9;
+	border-radius: 5px;
+	color: white;
+	font-size: 14px;
+	background: white;
+	border: 1px solid #537EA3;
+	color: #537EA3;
+}
+
+.button-modal:hover{
+	background: lightgrey;
+	border: 1px solid #537EA3;
+	color: black;
+}
