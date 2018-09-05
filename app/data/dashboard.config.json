@@ -62,6 +62,9 @@
       },{
         "title": "Mais compartilhado",
         "value": "sharesCount"
+      },{
+        "title": "Mais odiado",
+        "value": "angry"
       }
     ]
 }
