@@ -90,16 +90,6 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 		});
 	};
 
-	$scope.adicionaNoticia = function (data) {
-        //verifica se a notícia já não foi adicionada
-        if($scope.noticiaSelecionada.indexOf(data)<0){
-            $scope.noticiaSelecionada.push(data);
-			console.log('adicionei')
-        }
-        else {
-            $scope.noticiaSelecionada.splice($scope.noticiaSelecionada.indexOf(data),1);
-        }
-    };
 
 	// $scope.excluirObj = function() {
 	// 	//excluir vários objs
@@ -180,4 +170,21 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 		$("#loading" + divId).hide();
 		$("#error" + divId).show();
 	}
+});
+
+
+angular.module('eleicoes.dashboard')
+    .controller("utilidades", function($scope) { 
+
+		$scope.adicionaNoticia = function (data,lista) {
+			//verifica se a notícia já não foi adicionada
+			if(lista.indexOf(data)<0){
+				lista.push(data);
+				console.log('adicionei')
+			}
+			else {
+				lista.splice(lista.indexOf(data),1);
+			}
+		};
+
 });

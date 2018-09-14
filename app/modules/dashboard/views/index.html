@@ -18,11 +18,11 @@
     
       <div ng-repeat="nov in dados">
       <!-- seção que aparece no modo de exibição normal -->
-        <noticias info='nov' ng-show="filter.images"></noticias>
+        <noticias info='nov' lista="noticiaSelecionada" ng-show="filter.images"></noticias>
 
       <!-- seção que aparece no modo de exibição lista -->
       <div class="row">
-        <modolista info='nov' ng-show="!filter.images"></modolista>
+        <modolista info='nov' lista="noticiaSelecionada" ng-show="!filter.images"></modolista>
       </div>
 
       </div>

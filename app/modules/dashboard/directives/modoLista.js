@@ -3,7 +3,7 @@ eleicoes.directive('modolista', function() {
     restrict: 'E', 
     scope: { 
       info: '=',
-      listaSel: '='
+      lista: '='
     }, 
     templateUrl: 'modules/dashboard/directives/modoLista.html' 
   }; 
