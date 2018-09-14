@@ -1,0 +1,51 @@
+<div class="fb-post-box">
+      <div class="fb-post-header">
+     
+        <label>{{:: info.fromName }} em {{ info.createdTimeMs | date :  "dd/MM/y 'às' H:mm" :'UTC' }}</label>
+        <a href="http://{{info.postId}}" target="_blank" style="display: inline">
+        <h3>{{:: info.name }}</h3></a>
+      </div>
+    
+      <div class="fb-post-text">
+        <a href="http://{{info.postId}}" target="_blank" style="display: inline">
+        {{::info.message}}</a>
+      </div>
+    
+      <div class="fb-post-img max-midia">
+          <a href="http://{{info.postId}}" target="_blank" style="display: inline"><img src="{{:: info.fullPicture }}"></a>
+      </div>
+    
+      <div class="fb-reacts">
+        <div style="float:left">
+        <label ng-show="info.reactions.like > 0">
+          {{info.reactions.like}}
+          <img src="img/dashboard/like.png">
+        </label>
+        <label ng-show="info.reactions.love > 0">
+            {{info.reactions.love}}
+            <img src="img/dashboard/love.png">
+        </label>
+        <label ng-show="info.reactions.haha > 0">
+          {{info.reactions.haha}}
+          <img src="img/dashboard/haha.png">
+        </label>
+        <label ng-show="info.reactions.wow > 0">
+            {{info.reactions.wow}}
+            <img src="img/dashboard/wow.png">
+        </label>
+        <label ng-show="info.reactions.sad > 0">
+          {{info.reactions.sad}}
+          <img src="img/dashboard/sad.png">
+        </label>
+        <label ng-show="info.reactions.angry > 0">
+          {{info.reactions.angry}}
+          <img src="img/dashboard/angry.png">
+        </label>
+        </div>
+        <div style="float:right; text-align: right">
+        <div>{{info.commentsCount}} <img src="img/dashboard/comment.png">  {{info.sharesCount}} <img src="img/dashboard/share.png"></div>
+        </div>
+        <br><br>
+        <input type="button" value="{{:: tag }}" ng-repeat = "tag in info.hashtags | limitTo:15" disabled>
+      </div>
+    </div>

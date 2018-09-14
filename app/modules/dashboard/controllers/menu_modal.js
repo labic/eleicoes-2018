@@ -24,5 +24,9 @@ eleicoes.controller('MenuSup', function ($scope, $uibModal, $uibModalInstance, o
 		});
 	};
 
+	$scope.geraRelatorio = function(){
+		
+	}
+
 	
 });

@@ -1,6 +1,7 @@
-<div class="fb-post-box">
-    <input type="checkbox" style="margin-left:98%" >
+<div class="fb-post-box" ng-controller="utilidades">
+    <input type="checkbox" style="margin-left:98%" ng-click="adicionaNoticia(info, lista)">
   <div class="fb-post-header">
+ 
     <label>{{:: info.fromName }} em {{ info.createdTimeMs | date :  "dd/MM/y 'às' H:mm" :'UTC' }}</label>
     <a href="http://{{info.postId}}" target="_blank" style="display: inline">
     <h3>{{:: info.name }}</h3></a>
