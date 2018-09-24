@@ -1,6 +1,10 @@
 <div class="row">
   <!-- espacamento -->
   <div class="ponta"></div>
+  <div class="menu_space max-midia">
+      <img src="/img/icons/bandeira_es.jpg" ng-show="filter.images" ng-click="filter.images = !filter.images" style="cursor:pointer; height: 30px">
+      <img src="/img/icons/bandeira_br.jpg" ng-show="!filter.images" ng-click="filter.images = !filter.images" style="cursor:pointer; height: 30px">
+  </div>
   <!-- mudar exibicao -->
   <div class="menu_space max-midia">
       <span ng-show="!filter.images" ng-click="filter.images = !filter.images" class="glyphicon glyphicon-th" style="cursor:pointer"> Lista</span>
