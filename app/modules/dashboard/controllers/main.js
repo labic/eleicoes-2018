@@ -4,6 +4,9 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 	$scope.config = {
 		filter: settings.get('dashboard.filters')
 	};
+
+	$scope.keywords = $scope.config.filter.keyword;
+
 	$scope.url = 'http://209.97.130.59:4567/facedata?'
 	//$scope.url = 'https://inep-hash-data-api-dev.herokuapp.com/articles';
 	$scope.dados = [];
@@ -15,7 +18,8 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 		pag: 1,
 		lim: 25,
 		images: true,
-		sort:$scope.config.filter.sort[3].value
+		sort:$scope.config.filter.sort[3].value,
+		local: undefined
 	};
 
 	$http({
@@ -26,7 +30,8 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 			keyword: $scope.filter.keyword,
 			pag: $scope.filter.pag,
 			lim: $scope.filter.lim,
-			sort:$scope.filter.sort
+			sort:$scope.filter.sort,
+			local: $scope.filter.local
 		}
         //cache: true
     })
@@ -45,7 +50,8 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 			keyword: filter.keyword,
 			pag: filter.pag,
 			lim: filter.lim,
-			sort:filter.sort
+			sort:filter.sort,
+			local: filter.local
 		};
 
 		$http({
@@ -139,6 +145,17 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 		if (newFilter.sort != oldFilter.sort) {
 			newFilter.pag = 1;
 			$scope.loadData(newFilter);
+		}
+
+		if (newFilter.local != oldFilter.local) {
+			newFilter.pag = 1;
+			$scope.loadData(newFilter);
+			console.log(newFilter.local);
+			if(newFilter.local == 'br') {
+				$scope.keywords = $scope.config.filter.presidenciaveis;
+			} else {
+				$scope.keywords = $scope.config.filter.keywords;
+			}
 		}
 
 	}, true);

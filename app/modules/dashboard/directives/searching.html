@@ -2,8 +2,8 @@
   <!-- espacamento -->
   <div class="ponta"></div>
   <div class="menu_space max-midia">
-      <img src="/img/icons/bandeira_es.jpg" ng-show="filter.images" ng-click="filter.images = !filter.images" style="cursor:pointer; height: 30px">
-      <img src="/img/icons/bandeira_br.jpg" ng-show="!filter.images" ng-click="filter.images = !filter.images" style="cursor:pointer; height: 30px">
+      <img src="/img/icons/bandeira_es.jpg" ng-show="filter.local != 'br'" ng-click="filter.local = 'br'" style="cursor:pointer; height: 30px">
+      <img src="/img/icons/bandeira_br.jpg" ng-show="filter.local == 'br'" ng-click="filter.local = 'undefined'" style="cursor:pointer; height: 30px">
   </div>
   <!-- mudar exibicao -->
   <div class="menu_space max-midia">
@@ -25,7 +25,7 @@
   <!-- conteudos -->
   <div class="menu_space">
     <select ng-model="filter.keyword">
-        <option ng-repeat="option in config.filter.keyword" value="{{option.tag}}">{{option.title}}</option>
+        <option ng-repeat="option in keywords" value="{{option.tag}}">{{option.title}}</option>
       </select>
   </div>
 

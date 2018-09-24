@@ -66,5 +66,59 @@
         "title": "Mais odiado",
         "value": "angry"
       }
-    ]
+    ],
+    
+    "presidenciaveis": [
+      {
+        "title": "Oficial",
+        "tag": "oficial"
+      },{
+        "title": "Mídia",
+        "tag": "midia"
+      },{
+        "title": "Mídia Selecionada",
+        "tag": "midia_selecionada"
+      },{
+        "title": "Alvaro Dias",
+        "tag": "alvaro"
+      },{
+        "title": "Cabo Daciolo",
+        "tag": "daciolo"
+      },{
+        "title": "Ciro Gomes",
+        "tag": "ciro"
+      },{
+        "title": "Fernando Haddad",
+        "tag": "haddad"
+      },{
+        "title": "Geraldo Alckmin",
+        "tag": "alckmin"
+      },{
+        "title": "Guilherme Boulos",
+        "tag": "boulos"
+      },{
+        "title": "Henrique Meirelles",
+        "tag": "meirelles"
+      },{
+        "title": "Jair Bolsonaro",
+        "tag": "bolsonaro"
+      },{
+        "title": "João Amoedo",
+        "tag": "amoedo"
+      },{
+        "title": "João Goulart Filho",
+        "tag": "goulart"
+      },{
+        "title": "Guilherme Boulos",
+        "tag": "boulos"
+      },{
+        "title": "José Maria Eymael",
+        "tag": "eymael"
+      },{
+        "title": "Marina Silva",
+        "tag": "marina"
+      },{
+        "title": "Vera Lúcia",
+        "tag": "vera"
+      }]
 }
