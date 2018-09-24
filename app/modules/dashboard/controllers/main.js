@@ -19,7 +19,7 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 		lim: 25,
 		images: true,
 		sort:$scope.config.filter.sort[3].value,
-		local: undefined
+		local: 'es'
 	};
 
 	$http({
@@ -149,6 +149,7 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 
 		if (newFilter.local != oldFilter.local) {
 			newFilter.pag = 1;
+			newFilter.keyword = 'oficial'
 			$scope.loadData(newFilter);
 			console.log(newFilter.local);
 			if(newFilter.local == 'br') {
