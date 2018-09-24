@@ -6,7 +6,7 @@
 <div class="clear">
     <div class="modal-body" >
         <div class="box-input input-effect" ng-repeat="item in obj">
-            <label class="box-title" ><span class="glyphicon glyphicon-minus-sign"></span> {{item.fromName}} - {{item.name}}</label>
+            <label class="box-title" ><span class="glyphicon glyphicon-minus-sign" ng-click="delete(item)"></span> {{item.fromName}} - {{item.name}}</label>
         </div>
     </div>
 </div>

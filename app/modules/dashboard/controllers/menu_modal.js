@@ -24,8 +24,8 @@ eleicoes.controller('MenuSup', function ($scope, $uibModal, $uibModalInstance, o
 		});
 	};
 
-	$scope.geraRelatorio = function(){
-		
+	$scope.delete = function(item){
+		$scope.obj.splice($scope.obj.indexOf(item),1);
 	}
 
 	

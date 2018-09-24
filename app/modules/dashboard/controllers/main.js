@@ -115,10 +115,6 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 
 	// };
 
-	
-	$scope.geraRelatorio = function () {
-            
-    };
 
 	// Watch assiste a todos os filtros presentes na página esperando alguma alteração.
 	$scope.$watch('filter', function (newFilter, oldFilter) {
