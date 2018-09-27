@@ -66,7 +66,7 @@ html,body {
 }
 
 .menu_space {
-  width: 20%;
+  width: 18%;
   display: inline-block;
   min-height: 10px;
   padding-right: 15px;
@@ -211,7 +211,7 @@ button{
   width: 20px;
 }
 .ponta {
-  width: 8%;
+  width: 3%;
   display: inline-block;
 }
 

@@ -1,8 +1,8 @@
-eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filter, $location) {
+eleicoes.controller('mainP', function ($scope, $http, settings, $uibModal, $filter, $location) {
 
 	//pega as configurações de arquivo
 	$scope.config = {
-		filter: settings.get('dashboard.filters')
+		filter: settings.get('presidenciaveis.filters')
 	};
 
 	$scope.url = 'http://209.97.130.59:4567/facedata?'
@@ -17,7 +17,7 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 		lim: 25,
 		images: true,
 		sort:$scope.config.filter.sort[3].value,
-		local: 'es'
+		local: 'br'
 	};
 
 	$http({
@@ -29,7 +29,7 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 			pag: $scope.filter.pag,
 			lim: $scope.filter.lim,
 			sort:$scope.filter.sort,
-			local: 'es'
+			local: 'br'
 		}
         //cache: true
     })
@@ -43,7 +43,7 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
     },
     function (err) {
         console.log("Notícia não encontrada");
-        document.getElementById('notNovas').innerHTML ="<h1><b>Erro ao carregar conteúdo</b></h1><br><br><a href='#/dashboard' onclick='javascript:location.reload();'>Página inicial</a>";
+        document.getElementById('notNovas').innerHTML ="<h1><b>Erro ao carregar conteúdo</b></h1><br><br><a href='#/presidenciaveis' onclick='javascript:location.reload();'>Página inicial</a>";
 	});
 	
 	//pegando todos os dados
@@ -54,7 +54,7 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 			pag: filter.pag,
 			lim: filter.lim,
 			sort:filter.sort,
-			local: 'es'
+			local: 'br'
 		};
 
 		$http({
@@ -66,14 +66,14 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 		.then(function (response) {
 			$scope.dados = response.data.data;
 			if($scope.dados.length == 0){
-				document.getElementById('Erro').innerHTML ="<h1><b>Nenhuma notícia encontrada para esses filtros</b></h1><br><br><a href='#/dashboard' onclick='javascript:location.reload();'>Página inicial</a>";
+				document.getElementById('Erro').innerHTML ="<h1><b>Nenhuma notícia encontrada para esses filtros</b></h1><br><br><a href='#/presidenciaveis' onclick='javascript:location.reload();'>Página inicial</a>";
 			}else {
 				document.getElementById('Erro').innerHTML ="";
 			}
 		},
 		function (err) {
 			console.log("Nenhuma notícia encontrada");
-			document.getElementById('Erro').innerHTML ="<h1><b>Erro ao carregar conteúdo</b></h1><br><br><a href='#/dashboard' onclick='javascript:location.reload();'>Página inicial</a>";
+			document.getElementById('Erro').innerHTML ="<h1><b>Erro ao carregar conteúdo</b></h1><br><br><a href='#/presidenciaveis' onclick='javascript:location.reload();'>Página inicial</a>";
 		});
 	};
 
@@ -180,19 +180,3 @@ eleicoes.controller('main', function ($scope, $http, settings, $uibModal, $filte
 	}
 });
 
-
-angular.module('eleicoes.dashboard')
-    .controller("utilidades", function($scope) { 
-
-		$scope.adicionaNoticia = function (data,lista) {
-			//verifica se a notícia já não foi adicionada
-			if(lista.indexOf(data)<0){
-				lista.push(data);
-				console.log('adicionei')
-			}
-			else {
-				lista.splice(lista.indexOf(data),1);
-			}
-		};
-
-});

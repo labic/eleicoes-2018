@@ -1,0 +1,39 @@
+<!--  menu topo  -->
+<div ng-controller="mainP">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="container">
+    <searching> </searching></div>
+</nav>
+
+<div id="conteudo">
+    <!--  blocos de notícias novas  -->
+  <div id="notNovas" >
+
+    <!--  ícone fixo para relatório  -->
+    <button style="position:fixed; margin-left: 70%;" ng-click="open('lg','modules/presidenciaveis/views/modal.html',noticiaSelecionada)" title="Gerar relatório manual">
+      <img src="img/dashboard/icon3.PNG" style="height: 50px; width: auto; cursor: pointer">
+    </button>
+
+    <div id="Erro"></div>
+    
+      <div ng-repeat="nov in dados">
+      <!-- seção que aparece no modo de exibição normal -->
+        <noticias info='nov' lista="noticiaSelecionada" ng-show="filter.images"></noticias>
+
+      <!-- seção que aparece no modo de exibição lista -->
+      <div class="row">
+        <modolista info='nov' lista="noticiaSelecionada" ng-show="!filter.images"></modolista>
+      </div>
+
+      </div>
+      <br><br>
+      <section layout="row" layout-align="center" layout-wrap align="center">
+        <button ng-show="filter.pag > 1" ng-click="filter.pag = filter.pag - 1" style="margin-right: 10px;"> Página anterior </button>
+        <button ng-click="filter.pag = filter.pag + 1" > Página seguinte </button>
+        <br><br>
+      </section>
+  </div>
+      <!--  footer  -->
+    <div id="footer"></div>
+</div>
+</div>
