@@ -8,13 +8,13 @@ html,body {
 
 #conteudo {
   position:fixed;
-  right: 5%;
-  left: 8%;
-  top: 15%;
-  bottom: 5%;
+  right: 2%;
+  left: 2%;
+  top: 20%;
+  bottom: 2%;
   font-size: 15px;
   background-color: white;
-  padding:2% 10% 0% 10%;
+  padding:2% 5% 0% 5%;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
   overflow: auto;
 }
@@ -51,40 +51,18 @@ html,body {
   margin: auto;
 }
 
-.navbar, .navbar-inverse, .navbar-fixed-top {
-  top: 3%;
-  right: 5%;
-  left:8%;
-  height: auto;
-  padding: 1% 0 1% 0;
-  border: 1px gray;
-  background-color: #FFFFFF;
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
-  color:#365899;
-  font-size: 130%;
-  margin-bottom: 5%;
-}
-
-.menu_space {
-  width: 18%;
-  display: inline-block;
+.menu {
+  position: fixed;
+  top: 35%;
+  left: 5%;
+  width: 25%;
   min-height: 10px;
   padding-right: 15px;
   padding-left: 15px;
   text-align: center;
 }
 
-/*.navbar-fixed-top input{
-  background-color: transparent;
-  width:80%;
-  outline: none;
-  border: none;
-  color:#004C84;
-  border-bottom: 1px solid #2B3044;
-  padding: 3px 10px;
-}*/
-
-.navbar-fixed-top select {
+.menu select {
   background-color: transparent;
   width:100%;
   outline: none;
@@ -152,12 +130,13 @@ button{
 }
 
 .fb-post-box {
-  direction: ltr;
   line-height: 1.34;
   border-radius: 8px;
   border: 1px solid lightgray;
   padding: 10px 20px 15px 30px;
   margin-bottom: 20px;
+  width: 65%;
+  float: right;
 }
 
 .fb-post-box a {
