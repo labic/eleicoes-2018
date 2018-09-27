@@ -35,6 +35,11 @@ eleicoes.controller('mainP', function ($scope, $http, settings, $uibModal, $filt
     })
     .then(function (response) {
         $scope.dados = response.data.data;
+			if($scope.dados.length == 0){
+				document.getElementById('Erro').innerHTML ="<h1><b>Nenhuma notícia encontrada para esses filtros</b></h1><br><br><a href='#/dashboard' onclick='javascript:location.reload();'>Página inicial</a>";
+			}else {
+				document.getElementById('Erro').innerHTML ="";
+			}
     },
     function (err) {
         console.log("Notícia não encontrada");
