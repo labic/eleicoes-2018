@@ -4,7 +4,8 @@ var eleicoes = angular.module('eleicoes', [
   'ui.bootstrap',
   'eleicoes.api',
   'eleicoes.core',
-  'eleicoes.dashboard'
+  'eleicoes.dashboard',
+  'eleicoes.presidenciaveis'
 ])
 .constant('HASH_API_BASE_URI', 'https://inep-hash-api-js.herokuapp.com/v2')
 .constant('WORD_API_BASE_URI', 'https://inep-hash-word-api-dev.herokuapp.com')

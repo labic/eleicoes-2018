@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <label class="modal-title">Relatório manual</label>
+    <button class="modal-exit" ng-click="cancel()">X</button>
+</div>
+    
+<div class="clear">
+    <div class="modal-body" >
+        <div class="box-input input-effect" ng-repeat="item in obj">
+            <label class="box-title" ><span class="glyphicon glyphicon-minus-sign" ng-click="delete(item)"></span> {{item.fromName}} - {{item.name}}</label>
+        </div>
+    </div>
+</div>
+
+<div class="box-button text-center">
+    <button class="btn button-modal" onclick="printJS('selecionados','html')" >Gerar</button>
+</div>
+
+<div style="display: none" >
+    <div  id="selecionados">
+    <div  ng-repeat="item in obj">
+        <relatorio info='item'></relatorio>
+    </div></div>
+</div>
