@@ -59,7 +59,6 @@ html,body {
   min-height: 10px;
   padding-right: 15px;
   padding-left: 15px;
-  text-align: center;
 }
 
 .menu select {
@@ -74,10 +73,31 @@ html,body {
   appearance: none; /* Remove estilo padrão do FireFox*/
 }
 
-button{
+.menu_space {
+  width: 100%;
+  margin-bottom: 30px;
+  display: inline-block;
+
+}
+
+.menu_botoes{
+  width: 100%;
+  margin-bottom: 30px;
+  display: inline-block;
+  text-align: center;
+}
+
+.menu_botoes a {
+  display: inline-block;
+  margin-right: 10%;
+}
+
+#conteudo button{
   background-color: transparent;
   border: none;
   outline: none;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .modal {
@@ -107,6 +127,7 @@ button{
 .modal-content img, picture {
   align-self: center;
   max-width: 50%;
+  max-height: 500px;
   height: auto;
   border: none;
   overflow-wrap: hidden;
@@ -174,7 +195,7 @@ button{
   width:auto;
   height: auto;
   max-width:80%;
-  max-height: 600px;
+  max-height: 500px;
 }
 
 .fb-reacts {
@@ -188,10 +209,6 @@ button{
   margin-right: 10px;
   height: 20px;
   width: 20px;
-}
-.ponta {
-  width: 3%;
-  display: inline-block;
 }
 
 .relatorio-post-box {
@@ -237,7 +254,7 @@ button{
     font-size: 25px;
   }
 
-  .max-midia, .ponta {
+  .max-midia {
     display: none;
   }
 }
