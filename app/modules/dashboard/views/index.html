@@ -1,20 +1,17 @@
 <!--  menu topo  -->
 <div ng-controller="main">
-<nav class="navbar navbar-inverse navbar-fixed-top">
-<div class="container">
-    <searching> </searching></div>
-</nav>
 
 <div id="conteudo">
+  <searching class="menu"> </searching>
     <!--  blocos de notícias novas  -->
   <div id="notNovas" >
 
     <!--  ícone fixo para relatório  -->
-    <button style="position:fixed; margin-left: 70%;" ng-click="open('lg','modules/dashboard/views/modal.html',noticiaSelecionada)" title="Gerar relatório manual">
+    <button ng-show="noticiaSelecionada.length != 0" style="position:fixed; margin-left: 85%;" ng-click="open('lg','modules/dashboard/views/modal.html',noticiaSelecionada)" title="Gerar relatório manual">
       <img src="img/dashboard/icon3.PNG" style="height: 50px; width: auto; cursor: pointer">
     </button>
 
-    <div id="Erro"></div>
+    <div id="Erro" style="padding-left: 40%"></div>
     
       <div ng-repeat="nov in dados">
       <!-- seção que aparece no modo de exibição normal -->
@@ -29,7 +26,7 @@
       <br><br>
       <section layout="row" layout-align="center" layout-wrap align="center">
         <button ng-show="filter.pag > 1" ng-click="filter.pag = filter.pag - 1" style="margin-right: 10px;"> Página anterior </button>
-        <button ng-click="filter.pag = filter.pag + 1" > Página seguinte </button>
+        <button ng-click="filter.pag = filter.pag + 1" ng-show="dados.length != 0"> Página seguinte </button>
         <br><br>
       </section>
   </div>

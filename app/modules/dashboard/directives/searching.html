@@ -1,14 +1,7 @@
-<div class="row">
-  <!-- espacamento -->
-  <div class="ponta"></div>
-  <div class="menu_space max-midia">
-    <a href="#dashboard" ng-show="filter.local == 'br'"><img src="/img/icons/bandeira_es.jpg" style="height: 30px"></a>
-    <a href="#presidenciaveis" ng-show="filter.local == 'es'"><img src="/img/icons/bandeira_br.jpg" style="height: 30px"></a>
-  </div>
-  <!-- mudar exibicao -->
-  <div class="menu_space max-midia">
-      <span ng-show="!filter.images" ng-click="filter.images = !filter.images" class="glyphicon glyphicon-th" style="cursor:pointer"> Lista</span>
-      <span ng-show="filter.images" ng-click="filter.images = !filter.images" class="glyphicon glyphicon-th-list" style=" cursor:pointer"> Imagens</span>
+<div class="menu">
+  <div class="menu_botoes">
+    <span><a href="#dashboard"><img src="/img/layout/bandeira_es.png" style="height: 60px;"></a></span>
+    <span><a href="#presidenciaveis"><img src="/img/layout/bandeira_br.png" style="height: 60px;"></a></span>
   </div>
   <!-- data inicial -->
   <div class="menu_space">
@@ -27,6 +20,17 @@
     <select ng-model="filter.keyword">
         <option ng-repeat="option in config.filter.keyword" value="{{option.tag}}">{{option.title}}</option>
       </select>
+  </div>
+  <!-- mudar exibicao -->
+  <div class="menu_space max-midia">
+      <span ng-show="!filter.images" ng-click="filter.images = !filter.images" class="glyphicon glyphicon-th" style="cursor:pointer"> Lista</span>
+      <span ng-show="filter.images" ng-click="filter.images = !filter.images" class="glyphicon glyphicon-th-list" style=" cursor:pointer"> Imagens</span>
+  </div>
+
+  <div class="menu_space">
+      <button ng-click="open('lg','modules/presidenciaveis/views/sobre.html')">
+        Sobre
+      </button>
   </div>
 
 </div>
